@@ -8,6 +8,10 @@ gem 'rails', '3.2.14'
 gem 'pg'
 
 gem "haml-rails"
+gem 'pry-rails'
+gem 'devise'
+
+
 
 
 # Gems used only for assets and not required
