@@ -7,4 +7,6 @@ class Post < ActiveRecord::Base
   has_many :scores
   has_many :stars
 
+  validates :content, presence: true
+
 end
