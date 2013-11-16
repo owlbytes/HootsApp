@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+  before_filter :authenticate_user!, except: [:index, :show]
 
   # GET /comments/new
   # GET /comments/new.json
