@@ -10,6 +10,9 @@
     %tr
       %td= post.content
       %td= "Comments: #{post.comments.count}"
+      %td= "+" #update to link_to once logic for up/down votes established
+      %td= "-" #update to link_to once logic for up/down votes established
+      %td= "flag" 
       %td= link_to 'Show', post
       %td= link_to 'Edit', edit_post_path(post)
       %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
