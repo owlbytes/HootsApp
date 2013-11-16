@@ -10,6 +10,7 @@ gem 'pg'
 gem "haml-rails"
 gem 'pry-rails'
 gem 'devise'
+gem "omniauth-google-oauth2"
 
 
 
