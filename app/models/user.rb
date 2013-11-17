@@ -7,11 +7,9 @@ class User < ActiveRecord::Base
   has_many :scores
   has_many :stars
 
-<<<<<<< HEAD
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true
 
-=======
   devise :database_authenticatable, 
          :registerable,
          :recoverable,
@@ -43,5 +41,4 @@ class User < ActiveRecord::Base
       end
     end
   end
->>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
 end
