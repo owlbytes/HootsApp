@@ -49,7 +49,11 @@ GEM
       xpath (~> 2.0)
 =======
     builder (3.0.4)
+<<<<<<< HEAD
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -62,7 +66,11 @@ GEM
     database_cleaner (1.2.0)
     debug_inspector (0.0.2)
 =======
+<<<<<<< HEAD
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
     devise (3.2.0)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -71,6 +79,8 @@ GEM
       warden (~> 1.2.3)
 <<<<<<< HEAD
     diff-lcs (1.2.4)
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
     erubis (2.7.0)
     execjs (2.0.2)
     factory_girl (4.3.0)
@@ -113,7 +123,11 @@ GEM
       rack-contrib
       railties
 =======
+<<<<<<< HEAD
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
     method_source (0.8.2)
     mime-types (1.25)
     mini_portile (0.5.2)
@@ -123,6 +137,7 @@ GEM
       mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
 =======
+<<<<<<< HEAD
     multipart-post (1.2.0)
     oauth2 (0.8.1)
       faraday (~> 0.8)
@@ -141,6 +156,10 @@ GEM
       omniauth (~> 1.0)
     orm_adapter (0.5.0)
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+    orm_adapter (0.5.0)
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
     pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
@@ -153,7 +172,11 @@ GEM
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
 =======
+<<<<<<< HEAD
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -201,7 +224,11 @@ GEM
     shoulda-matchers (2.4.0)
       activesupport (>= 3.0.0)
 =======
+<<<<<<< HEAD
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
     slop (3.4.6)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -225,7 +252,11 @@ GEM
     xpath (2.0.0)
       nokogiri (~> 1.3)
 =======
+<<<<<<< HEAD
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
 
 PLATFORMS
   ruby
@@ -241,13 +272,18 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+=======
+  devise
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
   haml-rails
   jquery-rails
   meta_request
   pg
   pry-rails
+<<<<<<< HEAD
   quiet_assets
 =======
+<<<<<<< HEAD
   devise
   haml-rails
   jquery-rails
@@ -255,6 +291,9 @@ DEPENDENCIES
   pg
   pry-rails
 >>>>>>> 4c7baf688fed0bc1dcc8a3dcbacefce88097bac9
+=======
+>>>>>>> 8f492ab244ab2629e4ecd5bd2d7377b028fc446c
+>>>>>>> chore/test_scripts
   rails (= 3.2.14)
   rspec-rails
   sass-rails (~> 3.2.3)

@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
+<<<<<<< HEAD
   before_filter :authenticate_user!, except: [:index, :show]
 
 
+=======
+>>>>>>> chore/test_scripts
   def index
     @posts = Post.all
   end

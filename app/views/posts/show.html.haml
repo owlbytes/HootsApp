@@ -8,7 +8,10 @@
   - @post.comments.each do |comment|
     %li
       = "#{comment.content}"
+<<<<<<< HEAD
       = link_to "flag"
+=======
+>>>>>>> chore/test_scripts
 
   = form_for [@post, @post.comments.build] do |f|
     %p= f.text_area :content, :size => '40x10'
