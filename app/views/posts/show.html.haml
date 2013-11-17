@@ -4,7 +4,12 @@
   %h3 Post
   %p= "#{@post.content}"
   %p= "Current score: #{@post.current_post_score(@post)}"
-
+  = link_to "+", vote_post_path + "?score=#{1}", method: :put
+  \|
+  = link_to "-", vote_post_path + "?score=#{-1}", method: :put 
+  \|
+  = link_to "flag" 
+  %p Comments:
   %ol
   - @post.comments.each do |comment|
     %li

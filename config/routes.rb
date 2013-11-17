@@ -5,12 +5,15 @@ HootsApp::Application.routes.draw do
   root :to => "posts#index"
 
   resources :posts do 
+    member do
+      put :vote
+    end
     resources :comments
   end
 
   resources :users
 
-  resources :scores, only: [:create]
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

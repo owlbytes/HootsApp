@@ -13,7 +13,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @score = current_post_score()
   end
 
   # GET /posts/new
@@ -63,6 +62,21 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to posts_url }
+    end
+  end
+
+  def vote
+    @score = Score.new
+    @score.post_id = (params[:id])
+    @score.score = params[:score]
+    @post = Post.find(params[:id])
+    
+    respond_to do |format|
+      if @score.save
+        format.html { redirect_to @post, notice: "You've voted! Thanks." }
+      else
+        format.html { redirect_to @post, notice: "Oops something went wrong, please try again" }
+      end
     end
   end
 end

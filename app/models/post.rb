@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   has_many :scores
   has_many :stars
 
+  validates :content, presence: true
+
   def current_post_score(post)
     score_array = []
 
@@ -20,7 +22,5 @@ class Post < ActiveRecord::Base
   def comment_count
     comments.count
   end
-
-  validates :content, presence: true
 
 end
