@@ -1,9 +1,6 @@
 class CommentsController < ApplicationController
 
-<<<<<<< HEAD
   before_filter :authenticate_user!, except: [:index, :show]
-=======
->>>>>>> chore/test_scripts
 
   # GET /comments/new
   # GET /comments/new.json

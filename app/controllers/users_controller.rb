@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
-<<<<<<< HEAD
+
   before_filter :authenticate_user!, except: [:index, :show]
 
-
-=======
->>>>>>> chore/test_scripts
   def index
     @users = User.all
   end

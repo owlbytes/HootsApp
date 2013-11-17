@@ -9,13 +9,10 @@
   - @posts.each do |post|
     %tr
       %td= post.content
-<<<<<<< HEAD
       %td= "Comments: #{post.comments.count}"
       %td= link_to "+" #update to link_to once logic for up/down votes established
       %td= link_to "-" #update to link_to once logic for up/down votes established
       %td= link_to "flag" 
-=======
->>>>>>> chore/test_scripts
       %td= link_to 'Show', post
       %td= link_to 'Edit', edit_post_path(post)
       %td= link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }

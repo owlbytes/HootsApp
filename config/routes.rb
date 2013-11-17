@@ -1,12 +1,9 @@
 HootsApp::Application.routes.draw do
   
-<<<<<<< HEAD
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   root :to => "posts#index"
 
-=======
->>>>>>> chore/test_scripts
   resources :posts do 
     resources :comments
   end
