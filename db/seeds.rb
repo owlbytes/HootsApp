@@ -5,10 +5,10 @@ Comment.delete_all
 Score.delete_all
 Star.delete_all
 
-user1 = User.create!(name: 'Neha', email: 'neha@neha.com', image: 'placeholder', role: 'user')
-user2 = User.create!(name: 'Jamie', email: 'jamie@jamie.com', image: 'placeholder', role: 'admin')
-user3 = User.create!(name: 'Alex', email: 'alex@alex.com', image: 'placeholder', role: 'user')
-user4 = User.create!(name: 'Adam', email: 'adam@adam.com', image: 'placeholder', role: 'user')
+user1 = User.create!(name: 'Neha', email: 'neha@neha.com', image: 'placeholder', role: 'user', password: "password")
+user2 = User.create!(name: 'Jamie', email: 'jamie@jamie.com', image: 'placeholder', role: 'admin', password: "password")
+user3 = User.create!(name: 'Alex', email: 'alex@alex.com', image: 'placeholder', role: 'user', password: "password")
+user4 = User.create!(name: 'Adam', email: 'adam@adam.com', image: 'placeholder', role: 'user', password: "password")
 
 post1 = Post.create!(content: 'Post 1', image: 'placeholder', geostamp: 'geo1')
 post2 = Post.create!(content: 'Post 2', image: 'placeholder', geostamp: 'geo2')
