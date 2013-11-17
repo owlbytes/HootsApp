@@ -8,8 +8,9 @@
 
   - @posts.each do |post|
     %tr
+      %td= "Current score: #{post.current_post_score(post)}"
       %td= post.content
-      %td= "Comments: #{post.comments.count}"
+      %td= "Comments: #{post.comment_count}"
       %td= link_to "+" #update to link_to once logic for up/down votes established
       %td= link_to "-" #update to link_to once logic for up/down votes established
       %td= link_to "flag" 

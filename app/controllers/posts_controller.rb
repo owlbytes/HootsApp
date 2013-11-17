@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
+    @score = current_post_score()
   end
 
   # GET /posts/new
