@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   before_filter :authenticate_user!, except: [:index, :show]
+  authorize_resource
 
   def index
     @posts = Post.all
@@ -33,6 +34,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
+        @post.user = current_user
+        @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
         format.html { render action: "new" }
