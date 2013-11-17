@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   has_many :scores
   has_many :stars
 
+  validates :name, presence: true, uniqueness: true
+  validates :email, presence: true
+
   devise :database_authenticatable, 
          :registerable,
          :recoverable,

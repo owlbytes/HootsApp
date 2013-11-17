@@ -21,4 +21,6 @@ class Post < ActiveRecord::Base
     comments.count
   end
 
+  validates :content, presence: true
+
 end
