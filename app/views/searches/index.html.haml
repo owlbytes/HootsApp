@@ -1,0 +1,6 @@
+%h2 Search results
+%ul
+  - @posts.each do |post|
+    %li
+      = post.content
+      = truncate(post.content, length: 100, separator: " ")

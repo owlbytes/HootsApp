@@ -9,6 +9,7 @@ HootsApp::Application.routes.draw do
 
   root :to => "posts#index"
 
+  resources :searches, only: [:create]
   resources :posts do 
     member do
       put :vote
