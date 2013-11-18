@@ -11,6 +11,7 @@ gem "haml-rails"
 gem 'pry-rails'
 gem 'devise'
 gem "omniauth-google-oauth2"
+gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
 
 
 
