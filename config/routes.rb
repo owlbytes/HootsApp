@@ -2,6 +2,8 @@ HootsApp::Application.routes.draw do
   
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
+  resources :users
+
   root :to => "posts#index"
 
   resources :posts do 
@@ -10,8 +12,6 @@ HootsApp::Application.routes.draw do
     end
     resources :comments
   end
-
-  resources :users
 
 
 

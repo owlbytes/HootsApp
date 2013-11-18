@@ -19,12 +19,12 @@ class Ability
       #   u == user
       # end
       # can :create, Post
-      # can :update, Post do |post|
-      #   post.user == user
-      # end
-      # can :destroy, Post do |post|
-      #   post.user == current_user
-      # end
+      can :update, Post do |post|
+        post.user == user
+      end
+      can :destroy, Post do |post|
+        post.user == user
+      end
     else
       can :read, :all
     end
