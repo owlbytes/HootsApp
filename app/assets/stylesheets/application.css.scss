@@ -19,24 +19,82 @@
 }
 
 body {
-  background-image: url('snow.jpg');
+  background: #adb5be;
+  // margin-bottom: 200px;
 }
 
-.image-fader {
-  background: white;
-  opacity: 0.25;
-}
+/*********
+* HEADER *
+*********/
 
 .nav-bar {
-  margin: 0 auto;
-  max-width: 1000px;
+  // margin: 0 auto;
+  // max-width: 900px;
+  color: white;
   .nav-link {
     float: left;
+    padding: 0.5em;
+    a {
+    text-decoration: none;
+    color: white;
+    }
+  }
+  .nav-link-right {
+    float: right;
+    padding: 0.5em;
+    a {
+    text-decoration: none;
+    color: white;
+    }
   }
   .nav-break {
     clear: both;
   }
   .flash {
     color:red;
+    padding-left: 0.5em;
   }
 }
+
+/********
+* POSTS *
+********/
+
+.container {
+  width: 1100px;
+  margin: auto;
+  color: white;
+  h1 {
+    color: black;
+  }
+  a {
+    color: white;
+  }
+}
+
+/*********
+* FOOTER *
+*********/
+
+.footer-bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  color: white;
+  margin: auto;
+  hr {
+    margin-bottom: 1px;
+  }
+  .footer-link {
+    float: left;
+    padding: 0.5em;
+    a {
+    text-decoration: none;
+    color: white;
+    }
+  }
+}
+
+
+
+

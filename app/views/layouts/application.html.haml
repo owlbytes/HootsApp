@@ -7,33 +7,42 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
 
-  %body
-    %div.image-fader  
-      %header.nav-bar
-        .nav-link
-          - if user_signed_in?
-            %div Logged in as
-            %b= current_user.email
-            = link_to 'Edit Profile', edit_user_registration_path
-            \|
-            = link_to 'Logout',  destroy_user_session_path, method: :delete
-          - else
-            .nav-link
-              = link_to 'Sign up', new_user_registration_path
-            .nav-link
-              \|
-              = link_to 'Login', new_user_session_path
-            .nav-link
-              \|
-              = link_to "Sign in With Google", user_omniauth_authorize_path(:google_oauth2)
-            .nav-link
-              \|
-              = link_to "Sign in With Facebook", user_omniauth_authorize_path(:facebook)
-        .nav-break
-          %hr
-        .flash
+  %body 
+    %header.nav-bar
+      .nav-link
+        Hoot...Ers
+      - if user_signed_in?
+        .nav-link-right
+          Logged in as
+          = current_user.email
+        .nav-link-right
+          \|
+        .nav-link-right
+          = link_to 'Edit Profile', edit_user_registration_path
+        .nav-link-right
+          \|
+        .nav-link-right
+          = link_to 'Logout',  destroy_user_session_path, method: :delete
+      - else
+        .nav-link-right
+          = link_to 'Sign up', new_user_registration_path
+        .nav-link-right
+          \|
+        .nav-link-right
+          = link_to 'Login', new_user_session_path
+        .nav-link-right
+          \|
+        .nav-link-right
+          = link_to "Sign in With Google", user_omniauth_authorize_path(:google_oauth2)
+        .nav-link-right
+          \|
+        .nav-link-right  
+          = link_to "Sign in With Facebook", user_omniauth_authorize_path(:facebook)
+      .nav-break
+        %hr
+      .flash
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
 
-      %section.container    
-        = yield
+    %section    
+      = yield
