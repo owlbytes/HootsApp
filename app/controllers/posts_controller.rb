@@ -31,11 +31,13 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
+    @post.user = current_user
 
     respond_to do |format|
+      puts
+      puts @post.inspect
+      puts
       if @post.save
-        @post.user = current_user
-        @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
         format.html { render action: "new" }
