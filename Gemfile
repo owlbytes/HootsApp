@@ -16,6 +16,8 @@ gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
 gem 'jquery-rails'
 
 gem 'cancan'
+gem "omniauth"
+gem "omniauth-facebook"
 
 gem 'carrierwave'
 gem 'rmagick'

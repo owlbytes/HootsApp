@@ -21,10 +21,11 @@
         = link_to 'Login', new_user_session_path
         \|
         = link_to "Sign in With Google", user_omniauth_authorize_path(:google_oauth2)
+        \|
+        = link_to "Sign in With Facebook", user_omniauth_authorize_path(:facebook)
  
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
 
   %body
     = yield
-

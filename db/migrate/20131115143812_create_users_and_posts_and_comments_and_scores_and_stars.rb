@@ -4,7 +4,7 @@ class CreateUsersAndPostsAndCommentsAndScoresAndStars < ActiveRecord::Migration
       t.string :name
       # t.string :email
       t.text :image
-      t.string :role
+      t.string :role, default: 'user'
       # t.string :password
       # t.string :password_confirmation
     end

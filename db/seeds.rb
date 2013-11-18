@@ -5,20 +5,23 @@ Comment.delete_all
 Score.delete_all
 Star.delete_all
 
-user1 = User.create!(name: 'Neha', email: 'neha@neha.com', image: 'placeholder', role: 'user', password: "password")
-user2 = User.create!(name: 'Jamie', email: 'jamie@jamie.com', image: 'placeholder', role: 'admin', password: "password")
-user3 = User.create!(name: 'Alex', email: 'alex@alex.com', image: 'placeholder', role: 'user', password: "password")
-user4 = User.create!(name: 'Adam', email: 'adam@adam.com', image: 'placeholder', role: 'user', password: "password")
+user1 = User.create!(name: "Neha", image: nil, role: 'admin', email: "neshah07@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2013-11-18 11:18:14", last_sign_in_at: "2013-11-17 18:29:11", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", confirmation_token: nil, confirmed_at: "2013-11-17 16:26:44", confirmation_sent_at: "2013-11-17 16:26:20", unconfirmed_email: nil, provider: nil, uid: nil)
 
-post1 = Post.create!(content: 'Post 1', image: 'placeholder', geostamp: 'geo1')
-post2 = Post.create!(content: 'Post 2', image: 'placeholder', geostamp: 'geo2')
-post3 = Post.create!(content: 'Post 3', image: 'placeholder', geostamp: 'geo3')
-post4 = Post.create!(content: 'Post 4', image: 'placeholder', geostamp: 'geo4', flag: true)
+user2 = User.create!(name: "Jamie", image: nil, role: 'admin', email: "wallacejamiec@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2013-11-18 11:18:14", last_sign_in_at: "2013-11-17 18:29:11", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", confirmation_token: nil, confirmed_at: "2013-11-17 16:26:44", confirmation_sent_at: "2013-11-17 16:26:20", unconfirmed_email: nil, provider: nil, uid: nil)
 
-comment1 = Comment.create!(content: 'Comment 1')
-comment2 = Comment.create!(content: 'Comment 2')
-comment3 = Comment.create!(content: 'Comment 3')
-comment4 = Comment.create!(content: 'Comment 4', flag: true)
+user3 = User.create!(name: "Alex", image: nil, role: 'admin', email: "alexham100@aol.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2013-11-18 11:18:14", last_sign_in_at: "2013-11-17 18:29:11", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", confirmation_token: nil, confirmed_at: "2013-11-17 16:26:44", confirmation_sent_at: "2013-11-17 16:26:20", unconfirmed_email: nil, provider: nil, uid: nil)
+
+user4 = User.create!(name: "Adam", image: nil, role: 'admin', email: "adam.buchan@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2013-11-18 11:18:14", last_sign_in_at: "2013-11-17 18:29:11", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", confirmation_token: nil, confirmed_at: "2013-11-17 16:26:44", confirmation_sent_at: "2013-11-17 16:26:20", unconfirmed_email: nil, provider: nil, uid: nil)
+
+post1 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo1')
+post2 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo2')
+post3 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo3')
+post4 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo4', flag: true)
+
+comment1 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.')
+comment2 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.')
+comment3 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.')
+comment4 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', flag: true)
 
 score1 = Score.create!(score: 1)
 score2 = Score.create!(score: -1)
