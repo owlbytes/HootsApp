@@ -31,11 +31,18 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    @post.user = current_user
+    @post.upvoters = "[]"
+    @post.downvoters = "[]"
+    puts 1
+    puts @post.upvoters
+    puts
     respond_to do |format|
       if @post.save
-        @post.user = current_user
-        @post.save
+        # binding.pry
+        puts 2
+        puts Post.last.upvoters
+        puts
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
         format.html { render action: "new" }
@@ -69,13 +76,41 @@ class PostsController < ApplicationController
   end
 
   def vote
-    @score = Score.new
-    @score.post_id = (params[:id])
-    @score.score = params[:score]
+    @post = Post.find(params[:id])
+    @post.deserialize(@post) #converts upvoters and downvoters from strings to arrays
+
+    #logic for votes
+    if @upvoters.includes? current_user.id && params[:score] == 1 then
+      post.score -= 1 
+      @upvoters.delete(current_user.id)
+    end
+
+    if @upvoters.includes? current_user.id && params[:score] == -1 then
+      post.score -= 2
+      @upvoters.delete(current_user.id)
+      @downvoters.push(current_user.id)
+    end
+
+    if @downvoters.includes? current_user.id && params[:score] == 1 then
+      post.score += 1
+      @downvoters.delete(current_user.id)
+    end
+
+    if @downvoters.includes? current_user.id && params[:score] == -1 then
+      post.score += 2
+      @downvoters.delete(current_user.id)
+      @upvoters.push(current_user.id)
+    end
+
+    if !(@downvoters.includes? current_user.id) && !(@upvoters.includes? current_user.id) then
+      post.score += params[:score]
+    end
+
     @post = Post.find(params[:id])
     
+    @post.serialize()
     respond_to do |format|
-      if @score.save
+      if @post.save
         format.html { redirect_to @post, notice: "You've voted! Thanks." }
       else
         format.html { redirect_to @post, notice: "Oops something went wrong, please try again" }
