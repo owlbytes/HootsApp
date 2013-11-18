@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true
 
+  mount_uploader :image, ImageUploader
+
   devise :database_authenticatable, 
          :registerable,
          :recoverable,

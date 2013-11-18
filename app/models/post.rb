@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
   has_many :stars
 
   validates :content, presence: true
+  
+  mount_uploader :image, ImageUploader
 
   def current_post_score(post)
     score_array = []
