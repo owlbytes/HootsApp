@@ -3,6 +3,7 @@
 #posts
   %h3 Post
   %p= "#{@post.content}"
+  %p=image_tag @post.image
   %p= "Current score: #{@post.current_post_score(@post)}"
   = link_to "+", vote_post_path + "?score=#{1}", method: :put
   \|
