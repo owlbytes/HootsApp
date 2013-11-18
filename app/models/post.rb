@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+  class Post < ActiveRecord::Base
 
   attr_accessible :content, :image, :geostamp, :flag
 
@@ -10,7 +10,8 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
 
   def current_post_score(post)
-    
+    score_array= []
+
     post.scores.each do |score|
       score_array << score.return_value
     end
@@ -18,8 +19,14 @@ class Post < ActiveRecord::Base
     score = score_array.reduce(:+)
   end
 
+  def sdf
+
+  end
+
   def user_voted_check(post)
-    post.scores.find_by_id(current_user.id)?  
+    post = post
+    binding.pry
+    post.scores.find_by_id(current_user.id).ispresent  
   end
 
   def comment_count
