@@ -3,17 +3,22 @@
   %h1 Hoots
 
   - @posts.each do |post|
-    = "#{post.current_post_score(post)}"
-    = post.content
-    %br
-    = "Comments: #{post.comment_count}"
-    = link_to "+" #update to link_to once logic for up/down votes established
-    = link_to "-" #update to link_to once logic for up/down votes established
-    = link_to "flag" 
-    = link_to 'Show', post
-    = link_to 'Edit', edit_post_path(post)
-    = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-    %hr
+    .post-score
+      = "#{post.current_post_score(post)}"
+    .post-voting
+      = link_to "+" #update to link_to once logic for up/down votes established
+      = link_to "-" #update to link_to once logic for up/down votes established      
+    .post-comment
+      = post.content
+    .post-commentcount
+      = "Comments: #{post.comment_count}"
+    .post-buttons
+      = link_to "Flag" 
+      = link_to 'Show', post
+      = link_to 'Edit', edit_post_path(post)
+      = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .post-break
+      %hr
   
 %footer.footer-bar
   %hr

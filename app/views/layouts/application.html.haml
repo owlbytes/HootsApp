@@ -10,7 +10,7 @@
   %body 
     %header.nav-bar
       .nav-link
-        Hoot...Ers
+        = link_to 'Hoot...Ers', root_url
       - if user_signed_in?
         .nav-link-right
           Logged in as
