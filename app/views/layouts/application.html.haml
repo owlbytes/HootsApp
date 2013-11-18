@@ -26,6 +26,9 @@
             .nav-link
               \|
               = link_to "Sign in With Google", user_omniauth_authorize_path(:google_oauth2)
+            .nav-link
+              \|
+              = link_to "Sign in With Facebook", user_omniauth_authorize_path(:facebook)
         .nav-break
           %hr
         .flash
@@ -34,4 +37,3 @@
 
       %section.container    
         = yield
-
