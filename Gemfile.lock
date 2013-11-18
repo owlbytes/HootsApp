@@ -212,8 +212,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  authlogic!
   annotate
+  authlogic!
   better_errors
   binding_of_caller
   cancan
