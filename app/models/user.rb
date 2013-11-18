@@ -6,9 +6,12 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :scores
   has_many :stars
+  has_many :providers
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true
+
+  mount_uploader :image, ImageUploader
 
   devise :database_authenticatable, 
          :registerable,
@@ -20,10 +23,11 @@ class User < ActiveRecord::Base
          :timeoutable, 
          :omniauthable, 
          :confirm_within => 10.minutes,
-         :omniauth_providers => [:google_oauth2]
+         :omniauth_providers => [:google_oauth2, :facebook]
 
 
   # Setup accessible (or protected) attributes for your model
+
   attr_accessible :name, :image, :role, :email, :password, :password_confirmation, :remember_me, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip, :last_sign_in_ip, :confirmation_token, :confirmed_at, :confirmation_sent_at, :unconfirmed_email, :provider, :uid
 
   def self.from_omniauth(auth)

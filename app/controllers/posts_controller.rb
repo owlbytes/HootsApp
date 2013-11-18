@@ -7,6 +7,14 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.order("created_at DESC")
+    end
+
+    # @top_posts = Post.order(score: :desc).limit(10).all
+    # @latest_posts = Post.order(:created_at).limit(10)
   end
 
   # GET /posts/1
@@ -36,7 +44,11 @@ class PostsController < ApplicationController
     @post.upvoters = "[-1]"
     @post.downvoters = "[-2]"
 
+
     respond_to do |format|
+      puts
+      puts @post.inspect
+      puts
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else

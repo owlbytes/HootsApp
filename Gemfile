@@ -16,7 +16,12 @@ gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
 gem 'jquery-rails'
 
 gem 'cancan'
+gem "omniauth"
+gem "omniauth-facebook"
 
+gem 'carrierwave'
+gem 'rmagick'
+gem "fog", "~> 1.3.1"
 
 # Gems used only for assets and not required
 # in production environments by default.
