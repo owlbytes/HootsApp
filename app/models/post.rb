@@ -9,6 +9,10 @@ class Post < ActiveRecord::Base
 
   validates :content, presence: true
 
+  def self.search(query)
+    where("content ilike ?", "%#{query}")
+  end 
+
   def current_post_score(post)
     score_array = []
 
