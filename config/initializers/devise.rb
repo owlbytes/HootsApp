@@ -1,3 +1,6 @@
+require "omniauth-facebook"
+require "omniauth-google-oauth2"
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -252,5 +255,9 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :google_oauth2, "812391836812-d9oninmavi8tc7bt6rqounk307ekd1ii.apps.googleusercontent.com", "-zkROnaf7n0-YQlZlUVwWC_q"
+  config.omniauth :facebook, "444283255683274", "d76c19a42f06bfb80728ec0c50c3f974", {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+    
+
+  
 
 end

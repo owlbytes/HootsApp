@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :scores
   has_many :stars
+  has_many :providers
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true
@@ -20,11 +21,11 @@ class User < ActiveRecord::Base
          :timeoutable, 
          :omniauthable, 
          :confirm_within => 10.minutes,
-         :omniauth_providers => [:google_oauth2]
+         :omniauth_providers => [:google_oauth2, :facebook]
 
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :image, :role, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :image, :role, :email, :password, :password_confirmation, :remember_me, :provider, :uid
 
 
 
