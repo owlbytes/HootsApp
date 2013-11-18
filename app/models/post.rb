@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
   has_many :stars
 
   validates :content, presence: true
+  
+  mount_uploader :image, ImageUploader
 
   def self.search(query)
     where("content ilike ?", "%#{query}")
