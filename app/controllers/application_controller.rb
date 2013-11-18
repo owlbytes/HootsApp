@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
     logger.info "SESSION CONTAINS: #{user_session}" 
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: "You are not allowed to do this"
+  end 
+
 end
