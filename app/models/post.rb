@@ -10,17 +10,19 @@ class Post < ActiveRecord::Base
   validates :content, presence: true
 
   def current_post_score(post)
-    score_array = []
-
+    
     post.scores.each do |score|
-      score_array << score.score
+      score_array << score.return_value
     end
-
+    
     score = score_array.reduce(:+)
+  end
+
+  def user_voted_check(post)
+    post.scores.find_by_id(current_user.id)?  
   end
 
   def comment_count
     comments.count
   end
-
 end

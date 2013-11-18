@@ -66,16 +66,27 @@ class PostsController < ApplicationController
   end
 
   def vote
-    @score = Score.new
-    @score.post_id = (params[:id])
-    @score.score = params[:score]
-    @post = Post.find(params[:id])
+    # check if a user has already voted and if they are clicking on same action thereby nullifying it
+    if post.user_voted_check(post) then
+      if post.scores.find_by_user_id(current_user.id).score == params[:score]
+        post.scores.find_by_id(current_user.id).score = 0
+      else
+        post.scores.find_by_id(current_user.id).score = params[:score]
+    else
+      # creating score -  there has to be a more consise way of doing this
+      @score = Score.new                
+      @score.user_id = current_user.id
+      @score.post_id = params[:id]
+      @score.score = params[:score]
+    post = Post.find(params[:id])
+
     
+
     respond_to do |format|
       if @score.save
-        format.html { redirect_to @post, notice: "You've voted! Thanks." }
+        format.html { redirect_to post, notice: "You've voted! Thanks." }
       else
-        format.html { redirect_to @post, notice: "Oops something went wrong, please try again" }
+        format.html { redirect_to post, notice: "Oops something went wrong, please try again" }
       end
     end
   end
