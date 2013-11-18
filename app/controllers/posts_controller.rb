@@ -32,17 +32,12 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user = current_user
-    @post.upvoters = "[]"
-    @post.downvoters = "[]"
-    puts 1
-    puts @post.upvoters
-    puts
+    @post.score = 0
+    @post.upvoters = "[-1]"
+    @post.downvoters = "[-2]"
+
     respond_to do |format|
       if @post.save
-        # binding.pry
-        puts 2
-        puts Post.last.upvoters
-        puts
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
         format.html { render action: "new" }
@@ -77,38 +72,37 @@ class PostsController < ApplicationController
 
   def vote
     @post = Post.find(params[:id])
-    @post.deserialize(@post) #converts upvoters and downvoters from strings to arrays
+    @upvoters, @downvoters = @post.deserialize(@post) #converts upvoters and downvoters from strings to arrays
 
     #logic for votes
-    if @upvoters.includes? current_user.id && params[:score] == 1 then
-      post.score -= 1 
+    if (@upvoters.include? current_user.id) && (params[:score] == "1") then
+      @post.score -= 1 
       @upvoters.delete(current_user.id)
-    end
 
-    if @upvoters.includes? current_user.id && params[:score] == -1 then
-      post.score -= 2
+    elsif (@upvoters.include? current_user.id) && (params[:score] == "-1") then
+      @post.score -= 2
       @upvoters.delete(current_user.id)
       @downvoters.push(current_user.id)
-    end
-
-    if @downvoters.includes? current_user.id && params[:score] == 1 then
-      post.score += 1
-      @downvoters.delete(current_user.id)
-    end
-
-    if @downvoters.includes? current_user.id && params[:score] == -1 then
-      post.score += 2
+    elsif (@downvoters.include? current_user.id) && (params[:score] == "1") then
+      @post.score += 2
       @downvoters.delete(current_user.id)
       @upvoters.push(current_user.id)
+    elsif (@downvoters.include? current_user.id) && (params[:score] == "-1") then
+      @post.score += 1
+      @downvoters.delete(current_user.id)
+    elsif !(@downvoters.include? current_user.id) && !(@upvoters.include? current_user.id) then
+      case params[:score]
+      when "-1"
+        @post.score -= 1
+        @downvoters << current_user.id
+      when "1"
+        @post.score += 1
+        @upvoters << current_user.id
+      end
     end
-
-    if !(@downvoters.includes? current_user.id) && !(@upvoters.includes? current_user.id) then
-      post.score += params[:score]
-    end
-
-    @post = Post.find(params[:id])
     
-    @post.serialize()
+    @post.upvoters = @upvoters.to_s
+    @post.downvoters = @downvoters.to_s
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: "You've voted! Thanks." }
