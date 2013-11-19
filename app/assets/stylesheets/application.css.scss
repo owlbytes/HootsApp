@@ -110,7 +110,8 @@ body {
   bottom: 0px;
   width: 100%;
   color: white;
-  margin: auto;
+  // margin: auto;
+  margin-top: 200px;
   hr {
     margin-bottom: 1px;
   }
@@ -129,6 +130,11 @@ body {
 ****************/
 
 @media only screen and (max-width: 1024px) {
+
+.nav-bar {
+  // display: inline-block;
+}
+
 
   .container {
     display: block;
