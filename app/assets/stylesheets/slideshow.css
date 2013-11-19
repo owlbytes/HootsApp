@@ -1,0 +1,31 @@
+.slideshow{
+  margin: 0;
+}
+
+.test {
+  position: absolute;
+  color: white;
+  z-index: 10;
+}
+
+.container{
+  position: relative;
+  width: 25%;
+  max-width: 500px;
+  right: 200px;
+  top: 13%;
+  padding: 10px 20px;
+}
+
+.contrast{
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 10px;
+  -webkit-box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
