@@ -3,27 +3,39 @@
   %h1 Hoots
 
   - @posts.each do |post|
+    .post-break
+      %hr
     .post-score
-      = "#{post.current_post_score(post)}"
-    .post-voting
-      = link_to "+" #update to link_to once logic for up/down votes established
-      = link_to "-" #update to link_to once logic for up/down votes established      
+      = "#{post.score}"
+    .post-voting-up
+      = image_tag 'PNG/thumbs-up.png'
+    .post-voting-down
+      = image_tag 'PNG/thumbs-down.png'   
     .post-comment
-      = post.content
+      = link_to post.content, post
     .post-commentcount
       = "Comments: #{post.comment_count}"
     .post-buttons
-      = link_to "Flag" 
-      = link_to 'Show', post
-      = link_to 'Edit', edit_post_path(post)
-      = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-    .post-break
-      %hr
+      = image_tag 'PNG/heart.png'
+      = link_to image_tag('PNG/info.png'), edit_post_path(post)
+      = link_to image_tag('PNG/cross.png'), post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      = image_tag 'PNG/!.png'
+
+
+  .post-break
+    %hr
   
 %footer.footer-bar
   %hr
   .footer-link
     = link_to 'New Post', new_post_path
+
+  .footer-link-right
+    = form_tag(id: "search-form") do
+      .input-append
+        = text_field_tag :search, params[:search], class: "span2", placeholder: "Search Articles"
+        %button.btn{type: "submit"}
+          %i.icon-search
 
 
 //pseudo code

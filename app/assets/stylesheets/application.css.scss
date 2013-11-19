@@ -19,7 +19,9 @@
 }
 
 body {
-  background: #adb5be;
+  background-image: url('jumpingatsunset.jpg');
+  background-size: 100%, 100%;
+  // background: #adb5be;
   // margin-bottom: 200px;
 }
 
@@ -62,14 +64,20 @@ body {
 
 .container {
   width: 90%;
+  min-width: 350px;
   margin: auto;
   color: white;
   h1 {
-    color: #53575b;
+    color: white;
   }
   a {
     color: white;
     text-decoration: none;
+  }
+  img {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
   }
   .post-score {
     width: 2%;
@@ -77,14 +85,24 @@ body {
     display: inline-block;
     text-align: center;
   }
-  .post-voting {
+  .post-voting-up {
     width: 3%;
     margin-left: 0.5em;
     display: inline-block;
+    img {
+      width: 25px;
+      height: 25px;
+    }
   }
+  .post-voting-down {
+    width: 3%;
+    display: inline-block;
+    margin-left: 0.5em;
+  }
+
   .post-comment {
     display: inline-block;
-    width: 55%;
+    width: 60%;
     margin-left: 0.5em;
     vertical-align: middle;
   }
@@ -106,6 +124,7 @@ body {
 *********/
 
 .footer-bar {
+  background-color: #adb5be;
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -113,7 +132,7 @@ body {
   // margin: auto;
   margin-top: 200px;
   hr {
-    margin-bottom: 1px;
+    margin-top: 0px;
   }
   .footer-link {
     float: left;
@@ -122,6 +141,9 @@ body {
     text-decoration: none;
     color: white;
     }
+  }
+  .footer-link-right {
+    float: right;
   }
 }
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131116152824) do
+ActiveRecord::Schema.define(:version => 20131118145348) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(:version => 20131116152824) do
     t.boolean  "flag",       :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "score"
+    t.string   "upvoters"
+    t.string   "downvoters"
   end
 
   create_table "scores", :force => true do |t|
