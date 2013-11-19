@@ -11,9 +11,9 @@ class Post < ActiveRecord::Base
   
   mount_uploader :image, ImageUploader
 
-  def self.search(query)
-    where("content ilike ?", "%#{query}")
-  end 
+  # def self.search(query)
+  #   where("content ilike ?", "%#{query}")
+  # end 
 
   def current_post_score(post)
     post.score
