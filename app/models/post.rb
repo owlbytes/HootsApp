@@ -19,14 +19,6 @@ class Post < ActiveRecord::Base
     post.score
   end
 
-  def serialize(ups, downs)
-    @ups = ups
-    @downs = downs
-    upvoters = @ups.to_s
-    downvoters = @downs.to_s  
-    return upvoters, downvoters
-  end
-
   def deserialize(post)
     @post = post
     upvoters = @post.upvoters[1..-2].split(',').collect! {|n| n.to_i}
