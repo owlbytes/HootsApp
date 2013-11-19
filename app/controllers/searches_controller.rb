@@ -4,4 +4,4 @@ class SearchesController < ApplicationController
     @posts = Post.advanced_search query_terms
     render :index
   end
-end
+end 
