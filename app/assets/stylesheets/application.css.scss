@@ -36,6 +36,7 @@ body {
   .nav-link {
     float: left;
     padding: 0.5em;
+    vertical-align: middle;
     a {
     text-decoration: none;
     color: white;
@@ -120,11 +121,54 @@ body {
 }
 
 /*********
+* SIGNIN *
+*********/
+
+.sign-in {
+  width: 400px;
+  height: 300px;
+  background-color: rgba(255,255,255,0.7);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  // opacity: 0.25;
+  .header {
+    text-align: center;
+    padding-top: 0.5em;
+  }
+  .form {
+    text-align: center;
+  }
+}
+
+/*********
+* SIGNUP *
+*********/
+
+.sign-up {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255,255,255,0.7);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  // opacity: 0.25;
+  .header {
+    text-align: center;
+    padding-top: 0.5em;
+  }
+  .form {
+    text-align: center;
+  }
+}
+
+
+/*********
 * FOOTER *
 *********/
 
 .footer-bar {
-  background-color: #adb5be;
+  background-color: rgba(0,0,0,0.5);
   position: fixed;
   bottom: 0px;
   width: 100%;
