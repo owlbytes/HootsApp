@@ -7,11 +7,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
-    else
-      @posts = Post.order("created_at DESC")
-    end
 
     # @top_posts = Post.order(score: :desc).limit(10).all
     # @latest_posts = Post.order(:created_at).limit(10)
@@ -90,7 +85,6 @@ class PostsController < ApplicationController
     if (@upvoters.include? current_user.id) && (params[:score] == "1") then
       @post.score -= 1 
       @upvoters.delete(current_user.id)
-
     elsif (@upvoters.include? current_user.id) && (params[:score] == "-1") then
       @post.score -= 2
       @upvoters.delete(current_user.id)
@@ -117,7 +111,11 @@ class PostsController < ApplicationController
     @post.downvoters = @downvoters.to_s
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: "You've voted! Thanks." }
+        if params[:returnto] == "index"
+          format.html { redirect_to posts_path, notice: "You've voted! Thanks." }
+        else
+          format.html { redirect_to @post, notice: "You've voted! Thanks." }
+        end
       else
         format.html { redirect_to @post, notice: "Oops something went wrong, please try again" }
       end

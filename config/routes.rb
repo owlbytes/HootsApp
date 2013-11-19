@@ -15,5 +15,6 @@ HootsApp::Application.routes.draw do
     end
     resources :comments
   end
+  resources :searches, only: [:create]
 
 end

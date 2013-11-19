@@ -12,7 +12,7 @@ gem 'pry-rails'
 gem 'devise'
 gem "omniauth-google-oauth2"
 gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
-
+gem "textacular", '~> 3.0'
 gem 'jquery-rails'
 
 gem 'cancan'
@@ -22,6 +22,8 @@ gem "omniauth-facebook"
 gem 'carrierwave'
 gem 'rmagick'
 gem "fog", "~> 1.3.1"
+
+gem 'gravtastic'
 
 # Gems used only for assets and not required
 # in production environments by default.
