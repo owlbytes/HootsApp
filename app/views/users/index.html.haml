@@ -1,4 +1,11 @@
-%h1 Listing users
+%h1 Hooterboard
 
-- @users.each do |user|
-  = user.name
+%ol
+  - @users.each do |user|
+    %li
+      =user.name
+      \- total score:
+      =user.score
+      \| top scoring hoot:
+      =user.top_score
+

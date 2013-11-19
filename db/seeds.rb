@@ -23,19 +23,19 @@ comment2 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adi
 comment3 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.')
 comment4 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', flag: true)
 
-score1 = Score.create!(score: 1)
-score2 = Score.create!(score: -1)
-score3 = Score.create!(score: 1)
-score4 = Score.create!(score: -1)
-score5 = Score.create!(score: 1)
-score6 = Score.create!(score: -1)
+# score1 = Score.create!(score: 1)
+# score2 = Score.create!(score: -1)
+# score3 = Score.create!(score: 1)
+# score4 = Score.create!(score: -1)
+# score5 = Score.create!(score: 1)
+# score6 = Score.create!(score: -1)
 
-star1 = Star.create!
-star2 = Star.create!
-star3 = Star.create!
-star4 = Star.create!
-star5 = Star.create!
-star6 = Star.create!
+# star1 = Star.create!
+# star2 = Star.create!
+# star3 = Star.create!
+# star4 = Star.create!
+# star5 = Star.create!
+# star6 = Star.create!
 
 # User assignation for posts
 user1.posts << post1
@@ -54,41 +54,41 @@ user1.comments << comment2
 user3.comments << comment1
 user4.comments << comment3
 
-# Score seeding
-post1.scores << score1
-user1.scores << score1
+# # Score seeding
+# post1.scores << score1
+# user1.scores << score1
 
-post2.scores << score2
-user1.scores << score2
+# post2.scores << score2
+# user1.scores << score2
 
-post3.scores << score3
-user2.scores << score3
+# post3.scores << score3
+# user2.scores << score3
 
-post2.scores << score4
-user3.scores << score4
+# post2.scores << score4
+# user3.scores << score4
 
-post3.scores << score5
-user3.scores << score5
+# post3.scores << score5
+# user3.scores << score5
 
-post3.scores << score6
-user4.scores << score6
+# post3.scores << score6
+# user4.scores << score6
 
-# Star seeding
-post1.stars << star1
-user1.stars << star1
+# # Star seeding
+# post1.stars << star1
+# user1.stars << star1
 
-post2.stars << star2
-user1.stars << star2
+# post2.stars << star2
+# user1.stars << star2
 
-post3.stars << star3
-user1.stars << star3
+# post3.stars << star3
+# user1.stars << star3
 
-post2.stars << star4
-user2.stars << star4
+# post2.stars << star4
+# user2.stars << star4
 
-post2.stars << star5
-user4.stars << star5
+# post2.stars << star5
+# user4.stars << star5
 
-post3.stars << star6
-user4.stars << star6
+# post3.stars << star6
+# user4.stars << star6
 
