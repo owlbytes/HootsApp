@@ -8,9 +8,9 @@
     .post-score
       = "#{post.score}"
     .post-voting-up
-      = image_tag 'PNG/thumbs-up.png'
+      = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(post) + "?score=1&returnto=index", method: :put
     .post-voting-down
-      = image_tag 'PNG/thumbs-down.png'   
+      = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(post) + "?score=-1&returnto=index", method: :put
     .post-comment
       = link_to post.content, post
     .post-commentcount
