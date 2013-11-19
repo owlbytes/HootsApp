@@ -51,5 +51,9 @@ class User < ActiveRecord::Base
   def role?(r)
     self.role == r.to_s
   end
+
+  include Gravtastic
+  gravtastic
+  
 end
 
