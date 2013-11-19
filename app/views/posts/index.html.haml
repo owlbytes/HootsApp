@@ -1,8 +1,30 @@
 %section.container
 
   %h1 Hoots
+  /leaderboard
+  %h2 Top Posts
+  - @top_posts.each do |post| 
+    .post-break
+      %hr
+    .post-score
+      = "#{post.score}"
+    .post-voting-up
+      = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(post) + "?score=1&returnto=index", method: :put
+    .post-voting-down
+      = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(post) + "?score=-1&returnto=index", method: :put
+    .post-comment
+      = link_to post.content, post
+    .post-commentcount
+      = "Comments: #{post.comment_count}"
+    .post-buttons
+      = image_tag 'PNG/heart.png'
+      = link_to image_tag('PNG/info.png'), edit_post_path(post)
+      = link_to image_tag('PNG/cross.png'), post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      = image_tag 'PNG/!.png'
 
-  - @posts.each do |post|
+  / latest/new posts
+  %h2 Latest Posts
+  - @latest_posts.each do |post|
     .post-break
       %hr
     .post-score
@@ -35,11 +57,4 @@
       = submit_tag "Search"
 
 
-
-//pseudo code
-
-/score table
-/order scores (high to low), get top 10
-/ get the corresponding posts id of top 10
-/display posts using post id
  
