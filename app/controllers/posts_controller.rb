@@ -120,4 +120,16 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def assign_favourite_post
+    fav_post = Post.find(params[:id])
+    curr_user = User.find(current_user.id)
+
+    fav_posts = curr_user.destring(curr_user)
+    fav_posts.push(fav_post.id)
+    curr_user.fav_posts = fav_posts.to_s
+    curr_user.save
+    redirect_to posts_path
+  end
+
 end

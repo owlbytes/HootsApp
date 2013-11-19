@@ -21,6 +21,23 @@ class UsersController < Devise::RegistrationsController
     @users = users.sort_by{ |a| a.score }.reverse
   end
 
+  # def assign_favourite_user
+  #   fav_user = User.find(params[:id])
+  #   curr_user = User.find(current_user.id)
+
+  #   fav_users = curr_user.destring(curr_user)
+  #   fav_users.push(fav_user.id)
+  #   curr_user.fav_users = fav_users.to_s
+  #   curr_user.save
+  # end
+
+
+  def favourites
+    render :favourites
+  end
+
+
+
   # GET /users/1
   # GET /users/1.json
   # def show

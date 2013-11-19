@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20131119191658) do
     t.string   "uid"
     t.integer  "score"
     t.integer  "top_score"
+    t.string   "fav_users"
+    t.string   "fav_posts"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
