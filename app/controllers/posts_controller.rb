@@ -7,9 +7,8 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-
-    # @top_posts = Post.order(score: :desc).limit(10).all
-    # @latest_posts = Post.order(:created_at).limit(10)
+    @top_posts = Post.order("score DESC").limit(10).all
+    @latest_posts = Post.order("created_at").limit(10)
   end
 
   # GET /posts/1
