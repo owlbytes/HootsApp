@@ -7,6 +7,10 @@ class UsersController < Devise::RegistrationsController
 
   def index
     @users = User.all
+    @users.each do |user|
+      user.posts.each do |post|
+        post.score
+    end
   end
 
   # GET /users/1
