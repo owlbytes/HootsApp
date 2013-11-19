@@ -15,10 +15,6 @@ class Post < ActiveRecord::Base
     where("content ilike ?", "%#{query}")
   end 
 
-  def current_post_score(post)
-    post.score
-  end
-
   def deserialize(post)
     @post = post
     upvoters = @post.upvoters[1..-2].split(',').collect! {|n| n.to_i}
