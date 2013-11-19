@@ -11,8 +11,8 @@
       %td= "Current score: #{post.score}"
       %td= post.content
       %td= "Comments: #{post.comment_count}"
-      %td= link_to "+" #update to link_to once logic for up/down votes established
-      %td= link_to "-" #update to link_to once logic for up/down votes established
+      %td= link_to "+", vote_post_path(post) + "?score=1&returnto=index", method: :put
+      %td= link_to "-", vote_post_path(post) + "?score=-1&returnto=index", method: :put
       %td= link_to "flag" 
       %td= link_to 'Show', post
       %td= link_to 'Edit', edit_post_path(post)
