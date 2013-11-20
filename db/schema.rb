@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20131119191658) do
     t.string   "fav_users",              :default => "[]"
     t.string   "fav_posts",              :default => "[]"
     t.string   "user_favs",              :default => "[]"
+    t.string   "phone_no"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
