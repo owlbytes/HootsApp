@@ -50,8 +50,10 @@ class UsersController < Devise::RegistrationsController
   end
 
   def assign_favourite_user
+    fav_user = User.find(params[:id])
     curr_user = User.find(current_user.id)
     fav_users = curr_user.destring_user(curr_user)
+    user_favs = fav_user.destring_favs(fav_user)
     respond_to do |format|
       if fav_users.include?(params[:id].to_i)
         format.html { redirect_to users_path, notice: "That user is already on of your favoorites!" }
@@ -59,8 +61,12 @@ class UsersController < Devise::RegistrationsController
         fav_users.push(params[:id].to_i)
         curr_user.fav_users = fav_users.to_s        
         curr_user.save
+        user_favs.push(current_user.id)
+        fav_user.user_favs = user_favs.to_s
+        fav_user.save
         format.html { redirect_to users_path, notice: "You've added to your favoorites." }
       end
+    binding.pry
     end
   end
 
