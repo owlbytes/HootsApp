@@ -5,5 +5,6 @@ class AddColumnToUsers < ActiveRecord::Migration
     add_column :users, :fav_users, :string, :default => '[]'
     add_column :users, :fav_posts, :string, :default => '[]'
     add_column :users, :user_favs, :string, :default => '[]'
+    add_column :users, :phone_no, :string
   end
 end
