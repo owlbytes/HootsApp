@@ -13,12 +13,28 @@
                 %p
                 = "#{post.content} - #{post.user.name}"
       %nav.slides-navigation
-        %a.next{href: "#"} Next
-        %a.prev{href: "#"} Previous
+        %a.next{href: "#"}
+          .icon-chevron-right
+        %a.prev{href: "#"}
+          .icon-chevron-left
   :javascript
     $(function() {
       $('#slides').superslides({
-        
+      });
+    });
+    $(function() {
+      var $slides = $('#slides');
+
+      Hammer($slides[0]).on("swipeleft", function(e) {
+        $slides.data('superslides').animate('next');
+      });
+
+      Hammer($slides[0]).on("swiperight", function(e) {
+        $slides.data('superslides').animate('prev');
+      });
+
+      $slides.superslides({
+        hashchange: true
       });
     });
   %footer.footer-bar

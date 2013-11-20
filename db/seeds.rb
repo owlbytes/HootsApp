@@ -13,15 +13,15 @@ user3 = User.create!(name: "Alex", image: nil, role: 'admin', email: "alexham100
 
 user4 = User.create!(name: "Adam", image: nil, role: 'admin', email: "adam.buchan@gmail.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2013-11-18 11:18:14", last_sign_in_at: "2013-11-17 18:29:11", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", confirmation_token: nil, confirmed_at: "2013-11-17 16:26:44", confirmation_sent_at: "2013-11-17 16:26:20", unconfirmed_email: nil, provider: nil, uid: nil, phone_no: '07711802216')
 
-post1 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo1', score: 10)
-post2 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo2', score: 5)
-post3 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo3', score: 2)
-post4 = Post.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', image: 'placeholder', geostamp: 'geo4', flag: true, score: 7)
+post1 = Post.create!(content: 'If opportunity doesn’t knock, build a door.', image: 'placeholder', geostamp: 'geo1', score: 1)
+post2 = Post.create!(content: 'A journey of a thousand leagues begins beneath one’s feet.', image: 'placeholder', geostamp: 'geo2', score: 2)
+post3 = Post.create!(content: 'Do not go where the path may lead; go instead where there is no path and leave a trail.', image: 'placeholder', geostamp: 'geo3', score: 3)
+post4 = Post.create!(content: 'I haven’t failed. I’ve just found 10,000 ways that won’t work.', image: 'placeholder', geostamp: 'geo4', flag: true, score: 4)
 
-comment1 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.')
-comment2 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.')
-comment3 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.')
-comment4 = Comment.create!(content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra diam ut velit accumsan vestibulum. Aliquam id vulputate nisi metus.', flag: true)
+comment1 = Comment.create!(content: 'So true!')
+comment2 = Comment.create!(content: 'Needed to read this today!')
+comment3 = Comment.create!(content: 'Amazing words of wisdom')
+comment4 = Comment.create!(content: 'Spot on!', flag: true)
 
 # score1 = Score.create!(score: 1)
 # score2 = Score.create!(score: -1)
