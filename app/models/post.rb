@@ -24,4 +24,13 @@ class Post < ActiveRecord::Base
     comments.count
   end
 
+  def send_texts(current_user, content)
+    curr_user = User.find(current_user.id)
+    tel_numbers = curr_user.destring_favs(curr_user)
+    tel_numbers.each do |id|
+      user = User.find(id)
+      TextMessage.new("#{curr_user.name} says #{content}", user.phone_no.to_s).send
+    end
+  end
+
 end
