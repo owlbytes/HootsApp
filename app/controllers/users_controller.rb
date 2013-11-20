@@ -6,8 +6,71 @@ class UsersController < Devise::RegistrationsController
   authorize_resource
 
   def index
-    @users = User.all
+    users = User.all
+    total_score = 0
+    users.each do |user|
+      total_score = 0
+      scores = [0]
+      user.posts.each do |post|
+        total_score = total_score + post.score
+        scores << post.score
+      end
+      user.score = total_score
+      user.top_score = scores.max
+    end
+    @users = users.sort_by{ |a| a.score }.reverse
   end
+
+  # def assign_favourite_user
+  #   fav_user = User.find(params[:id])
+  #   curr_user = User.find(current_user.id)
+
+  #   fav_users = curr_user.destring(curr_user)
+  #   fav_users.push(fav_user.id)
+  #   curr_user.fav_users = fav_users.to_s
+  #   curr_user.save
+  # end
+
+
+  def favourites
+    curr_user = User.find(current_user.id)
+    fav_posts = curr_user.destring(curr_user)
+    fav_users = curr_user.destring_user(curr_user)
+    @top_posts = []
+    @top_users = []
+    fav_posts.each do |n|
+      post = Post.find(n)
+      @top_posts << post
+    end
+    fav_users.each do |n|
+      user = User.find(n)
+      @top_users << user
+    end
+    render :favourites
+  end
+
+  def assign_favourite_user
+    fav_user = User.find(params[:id])
+    curr_user = User.find(current_user.id)
+    fav_users = curr_user.destring_user(curr_user)
+    user_favs = fav_user.destring_favs(fav_user)
+    respond_to do |format|
+      if fav_users.include?(params[:id].to_i)
+        format.html { redirect_to users_path, notice: "That user is already on of your favoorites!" }
+      else
+        fav_users.push(params[:id].to_i)
+        curr_user.fav_users = fav_users.to_s        
+        curr_user.save
+        user_favs.push(current_user.id)
+        fav_user.user_favs = user_favs.to_s
+        fav_user.save
+        format.html { redirect_to users_path, notice: "You've added to your favoorites." }
+      end
+    binding.pry
+    end
+  end
+
+
 
   # GET /users/1
   # GET /users/1.json
