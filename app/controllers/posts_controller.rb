@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   authorize_resource
 
   def index
-    @top_posts = Post.order("score DESC").limit(10).all
+    @top_posts = Post.order("score DESC").limit(5).all
     @latest_posts = Post.order("created_at").paginate(:page => params[:page])
       respond_to do |format|
         format.html
@@ -124,6 +124,21 @@ class PostsController < ApplicationController
         end
       else
         format.html { redirect_to @post, notice: "Oops something went wrong, please try again" }
+      end
+    end
+  end
+
+  def assign_favourite_post
+    curr_user = User.find(current_user.id)
+    fav_posts = curr_user.destring(curr_user)
+    respond_to do |format|
+      if fav_posts.include?(params[:id].to_i)
+        format.html { redirect_to posts_path, notice: "That post is already on of your favoorites!" }
+      else
+        fav_posts.push(params[:id].to_i)
+        curr_user.fav_posts = fav_posts.to_s        
+        curr_user.save
+        format.html { redirect_to posts_path, notice: "You've added to your favoorites." }
       end
     end
   end

@@ -4,7 +4,12 @@ HootsApp::Application.routes.draw do
 
   devise_scope :user do
     # get '/users' => 'users#index'
-    resources :users, :only => [:index]
+    resources :users, :only => [:index] do
+      member do
+        get :favourites
+        put :assign_favourite_user
+      end
+    end
   end
 
 
@@ -14,6 +19,7 @@ HootsApp::Application.routes.draw do
   resources :posts do 
     member do
       put :vote
+      put :assign_favourite_post
     end
     resources :comments
   end
