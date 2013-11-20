@@ -20,6 +20,8 @@
 
 body {
   background-image: url('jumpingatsunset.jpg');
+  background-repeat: no-repeat;
+  background-color: #000;
   background-size: 100%, 100%;
   // background: #adb5be;
   // margin-bottom: 200px;
@@ -33,6 +35,9 @@ body {
   // margin: 0 auto;
   // max-width: 900px;
   color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
   .nav-link {
     float: left;
     padding: 0.5em;
@@ -64,12 +69,22 @@ body {
 ********/
 
 .container {
-  width: 90%;
+  width: 70%;
   min-width: 350px;
   margin: auto;
   color: white;
   h1 {
     color: white;
+  }
+  .top-posts {
+    position: relative;
+  }
+  .posts{
+    // margin-left: auto;
+    // margin-right: auto;
+    position: relative;
+    // overflow: scroll;
+    // height: 300px;
   }
   a {
     color: white;
@@ -168,10 +183,10 @@ body {
 *********/
 
 .footer-bar {
-  background-color: rgba(0,0,0,0.9);
   position: fixed;
   bottom: 0px;
   width: 100%;
+  z-index: 10;
   color: white;
   // margin: auto;
   margin-top: 200px;

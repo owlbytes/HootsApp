@@ -6,9 +6,13 @@ class PostsController < ApplicationController
   authorize_resource
 
   def index
-    @posts = Post.all
-    @top_posts = Post.order("score DESC").limit(10).all
-    @latest_posts = Post.order("created_at").limit(10)
+    @top_posts = Post.order("score DESC").limit(5).all
+    @latest_posts = Post.order("created_at").paginate(:page => params[:page])
+      respond_to do |format|
+        format.html
+        format.js 
+      end
+    @posts = Post.all 
   end
 
   # GET /posts/1
@@ -38,11 +42,8 @@ class PostsController < ApplicationController
     @post.upvoters = "[-1]"
     @post.downvoters = "[-2]"
 
-
     respond_to do |format|
-      puts
-      puts @post.inspect
-      puts
+
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
@@ -50,6 +51,12 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def randomized_post_image()
+    images = ["assets/London1.jpeg", "assets/dark_sunset.jpg", "assets/purple_forest.png"]  
+    images[rand(images.size)]
+  end
+
 
   # PUT /posts/1
   # PUT /posts/1.json
