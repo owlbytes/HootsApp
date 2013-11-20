@@ -1,9 +1,13 @@
-# class MessagesController < ApplicationController
-#   def create
-#     TextMessage.new(params[:content], "your-real-phone-number").send
-#     redirect_to new_message_path 
-#   end
-# end
+class MessagesController < ApplicationController
+    
+  def new
+  end
+
+
+
+end
+
+
 
 # Adam Buchan, +447711802216
 # Alex Fasanmade, +447404091313
