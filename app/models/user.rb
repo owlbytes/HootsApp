@@ -56,9 +56,14 @@ class User < ActiveRecord::Base
   gravtastic
 
   def destring(user)
+    fav_posts = user.fav_posts[1..-2].split(',').collect! {|n| n.to_i}
+    return fav_posts
+  end
+  
+  def destring_user(user)
     fav_users = user.fav_users[1..-2].split(',').collect! {|n| n.to_i}
     return fav_users
   end
-  
+
 end
 

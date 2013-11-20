@@ -122,14 +122,17 @@ class PostsController < ApplicationController
   end
 
   def assign_favourite_post
-    fav_post = Post.find(params[:id])
     curr_user = User.find(current_user.id)
-
     fav_posts = curr_user.destring(curr_user)
-    fav_posts.push(fav_post.id)
-    curr_user.fav_posts = fav_posts.to_s
-    curr_user.save
-    redirect_to posts_path
+    respond_to do |format|
+      if fav_posts.include?(params[:id].to_i)
+        format.html { redirect_to posts_path, notice: "That post is already on of your favoorites!" }
+      else
+        fav_posts.push(params[:id].to_i)
+        curr_user.fav_posts = fav_posts.to_s        
+        curr_user.save
+        format.html { redirect_to posts_path, notice: "You've added to your favoorites." }
+      end
+    end
   end
-
 end
