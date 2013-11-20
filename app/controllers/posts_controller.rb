@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   authorize_resource
 
   def index
-    @top_posts = Post.order("score DESC").limit(5).all
+    @top_posts = Post.order("score DESC").limit(3).all
     @latest_posts = Post.order("created_at").paginate(:page => params[:page])
       respond_to do |format|
         format.html
@@ -41,15 +41,24 @@ class PostsController < ApplicationController
     @post.score = 0
     @post.upvoters = "[-1]"
     @post.downvoters = "[-2]"
-
+    
     respond_to do |format|
-
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
         format.html { render action: "new" }
       end
     end
+
+    if params[:promote]
+      curr_user = User.find(current_user.id)
+      tel_numbers = curr_user.destring_favs(curr_user)
+      tel_numbers.each do |id|
+        user = User.find(id)
+        TextMessage.new("#{curr_user.name} says #{params[:post][:content]}", user.phone_no.to_s).send
+      end
+    end
+
   end
 
 

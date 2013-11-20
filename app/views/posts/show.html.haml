@@ -19,16 +19,6 @@
               %p= f.text_area :content, :size => '30x5'
               %p= f.submit "Post comment"
 
-        %li#post-voting-up
-          = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(@post) + "?score=1&returnto=index", method: :put
-          %li#post-voting-down
-          = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(@post) + "?score=-1&returnto=index", method: :put
-          %li#post-buttons
-          = link_to image_tag('PNG/heart.png'), assign_favourite_post_post_path(@post), method: :put
-          = link_to image_tag('PNG/info.png'), edit_post_path(@post)
-          = link_to image_tag('PNG/cross.png'), @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-          = image_tag 'PNG/!.png'
-
   :javascript
     $(function() {
       $('#slides').superslides({
