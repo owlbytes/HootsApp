@@ -3,15 +3,8 @@ class MessagesController < ApplicationController
   def new
   end
 
-  def create
-    curr_user = User.find(current_user.id)
-    tel_numbers = curr_user.destring_favs(curr_user)
-    tel_numbers.each do |id|
-      user = User.find(id)
-      TextMessage.new("#{curr_user.name} says #{params[:content]}", user.phone_no.to_s).send
-    end
-    redirect_to new_message_path 
-  end
+
+
 end
 
 

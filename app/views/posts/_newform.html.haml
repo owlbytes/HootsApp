@@ -14,6 +14,6 @@
     = f.label :image
     = f.file_field :image
   .actions
-    = f.submit 'Save'
-
+    = f.submit 'Publish', :name => 'publish', :content => :content
+    = f.submit 'Promote', :name => 'promote', :content => :content
 

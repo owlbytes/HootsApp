@@ -15,4 +15,5 @@ class TextMessage
       from: ENV["TWILIO_NUM"]
     )
   end
+
 end
