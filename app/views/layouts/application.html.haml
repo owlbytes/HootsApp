@@ -15,11 +15,11 @@
         .nav-link
           \|
         .nav-link
-          = link_to 'Favoorites', favourites_user_path(current_user)
+          = link_to 'Favourites', favourites_user_path(current_user)
 
       - if user_signed_in?
         .nav-link
-          = link_to 'Hoot...Ers', root_url
+          = link_to image_tag('http://i.imgur.com/jJZiCB4.png'), '/posts'
         .nav-link-right
           Logged in as
           = current_user.email
@@ -33,7 +33,9 @@
           = link_to 'Logout',  destroy_user_session_path, method: :delete
       - else
         .nav-link
-          = link_to 'Hoot...Ers', root_url
+          = link_to image_tag('http://i.imgur.com/jJZiCB4.png'), '/posts'
+          / = link_to (image_tag ("app/assets/images/hoots_app_logo_nav_bar_clear_trans.png" "/posts"))
+           
         .nav-link-right
           = link_to 'Sign Up', new_user_registration_path
         .nav-link-right
