@@ -7,7 +7,9 @@ HootsApp::Application.routes.draw do
     resources :users, :only => [:index]
   end
 
-  root :to => "posts#index"
+
+
+  root :to => "slideshow#index"
 
   resources :posts do 
     member do

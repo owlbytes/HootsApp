@@ -9,16 +9,10 @@
 
   %body 
     %header.nav-bar
-      .nav-link
-        = link_to 'Hoot...Ers', root_url
-      .nav-link
-        \|
-      .nav-link
-        = form_tag searches_path do
-          = text_field_tag :query
-          = submit_tag "Search"
 
       - if user_signed_in?
+        .nav-link
+          = link_to 'Hoot...Ers', root_url
         .nav-link-right
           Logged in as
           = current_user.email
@@ -31,6 +25,8 @@
         .nav-link-right
           = link_to 'Logout',  destroy_user_session_path, method: :delete
       - else
+        .nav-link
+          = link_to 'Hoot...Ers', root_url
         .nav-link-right
           = link_to 'Sign Up', new_user_registration_path
         .nav-link-right

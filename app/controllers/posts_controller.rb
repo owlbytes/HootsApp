@@ -42,11 +42,8 @@ class PostsController < ApplicationController
     @post.upvoters = "[-1]"
     @post.downvoters = "[-2]"
 
-
     respond_to do |format|
-      puts
-      puts @post.inspect
-      puts
+
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
       else
@@ -54,6 +51,12 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  def randomized_post_image()
+    images = ["assets/London1.jpeg", "assets/dark_sunset.jpg", "assets/purple_forest.png"]  
+    images[rand(images.size)]
+  end
+
 
   # PUT /posts/1
   # PUT /posts/1.json

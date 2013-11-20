@@ -35,6 +35,9 @@ body {
   // margin: 0 auto;
   // max-width: 900px;
   color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
   .nav-link {
     float: left;
     padding: 0.5em;
@@ -180,10 +183,10 @@ body {
 *********/
 
 .footer-bar {
-  background-color: rgba(0,0,0,0.9);
   position: fixed;
   bottom: 0px;
   width: 100%;
+  z-index: 10;
   color: white;
   // margin: auto;
   margin-top: 200px;
