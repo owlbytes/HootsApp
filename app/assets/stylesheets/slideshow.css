@@ -8,16 +8,17 @@
   z-index: 10;
 }
 
-.container{
+.slideshow-container{
   position: relative;
   width: 25%;
   max-width: 500px;
-  right: 200px;
+  left: 134px;
   top: 13%;
   padding: 10px 20px;
 }
 
-.contrast{
+.slideshow-contrast{
+  color: white;
   background: rgba(0, 0, 0, 0.3);
   padding: 1px 10px;
   -webkit-box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
