@@ -1,8 +1,6 @@
 %section.container
 
-  %h1 Hoots
-  /leaderboard
-  %h2 Top Posts
+  %h2 Top Hoots
 
   - @top_posts.each do |post| 
     .post-break
@@ -24,7 +22,7 @@
       = image_tag 'PNG/!.png'
 
   / latest/new posts
-  %h2 Latest Posts
+  %h2 Latest Hoots
   .posts
     - @latest_posts.each do |post|
       .post-break
@@ -55,7 +53,7 @@
 %footer.footer-bar
   %hr
   .footer-link
-    = link_to 'New Post', new_post_path
+    = link_to 'New Hoot', new_post_path
 
 
 
