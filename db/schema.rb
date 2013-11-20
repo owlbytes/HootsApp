@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131118145348) do
+ActiveRecord::Schema.define(:version => 20131119191658) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20131118145348) do
     t.string   "unconfirmed_email"
     t.string   "provider"
     t.string   "uid"
+    t.integer  "score"
+    t.integer  "top_score"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

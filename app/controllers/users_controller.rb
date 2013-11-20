@@ -6,7 +6,19 @@ class UsersController < Devise::RegistrationsController
   authorize_resource
 
   def index
-    @users = User.all
+    users = User.all
+    total_score = 0
+    users.each do |user|
+      total_score = 0
+      scores = [0]
+      user.posts.each do |post|
+        total_score = total_score + post.score
+        scores << post.score
+      end
+      user.score = total_score
+      user.top_score = scores.max
+    end
+    @users = users.sort_by{ |a| a.score }.reverse
   end
 
   # GET /users/1

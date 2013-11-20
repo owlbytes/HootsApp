@@ -17,4 +17,5 @@ HootsApp::Application.routes.draw do
   end
   resources :searches, only: [:create]
 
+  resources :messages, only: [:new, :create]
 end
