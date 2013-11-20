@@ -47,7 +47,7 @@
       .post-continuous-loading
         = render :partial => 'shared/posts', :locals => { :posts => @latest_posts}
     
-  %h1= link_to "Load More Posts", posts_path(:page => @latest_posts.next_page), :class => "load-more-posts", :remote => true if @latest_posts.next_page
+  %h1= link_to "Load More Hoots", posts_path(:page => @latest_posts.next_page), :class => "load-more-posts", :remote => true if @latest_posts.next_page
 
   .post-break
     %hr

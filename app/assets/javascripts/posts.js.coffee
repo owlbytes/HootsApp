@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-->
-  ('a.load-more-posts').on 'inview', (e, visible) ->
+$ ->
+  $('a.load-more-posts').on 'inview', (e, visible) ->
     return unless visible
-    .getScript (this).attr('href')
+    $.getScript $(this).attr('href')

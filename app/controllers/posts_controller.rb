@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   authorize_resource
 
   def index
-    @top_posts = Post.order("score DESC").limit(10).all
+    @top_posts = Post.order("score DESC").limit(5).all
     @latest_posts = Post.order("created_at").paginate(:page => params[:page])
       respond_to do |format|
         format.html
