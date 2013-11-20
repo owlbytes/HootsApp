@@ -1,0 +1,18 @@
+.sign-in
+  %h2.header Sign In
+  .form
+    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+      .text
+        = f.label :email
+      .box
+        = f.email_field :email, :autofocus => true
+      .text
+        = f.label :password
+      .box
+        = f.password_field :password
+      - if devise_mapping.rememberable?
+        = f.check_box :remember_me
+        = f.label :remember_me
+      .button
+        = f.submit "Sign In"
+  = render "devise/shared/links"

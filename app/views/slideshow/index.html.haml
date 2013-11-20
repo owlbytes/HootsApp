@@ -4,28 +4,14 @@
   %body.slideshow
     #slides
       %ul.slides-container
-        %li
-          %img{alt: "test", src: "assets/dark_sunset.jpg"}/
-          .slideshow-container
-            %h1
-            .slideshow-contrast
-              %p
-              “Success is going from failure to failure without losing enthusiasm.” - WC
-
-        %li
-          %img{alt: "Cinelli", src: "assets/London1.jpeg"}/
-          .slideshow-container
-            %h1
-            .slideshow-contrast
-              %p
-              “Better late than never.” - GM
-        %li
-          %img{alt: "Surly",  src: "assets/purple_forest.png"}/
-          .slideshow-container
-            %h1
-            .slideshow-contrast
-              %p
-              “I don't think i've ever been more pleased with myself” - AH
+        -@top_posts.each do |post| 
+          %li
+            %img= image_tag post.image if post.image.present?
+            .slideshow-container
+              %h1
+              .slideshow-contrast
+                %p
+                = "#{post.content} - #{post.user.name}"
       %nav.slides-navigation
         %a.next{href: "#"} Next
         %a.prev{href: "#"} Previous

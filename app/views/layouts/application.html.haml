@@ -28,19 +28,19 @@
         .nav-link
           = link_to 'Hoot...Ers', root_url
         .nav-link-right
-          = link_to 'Sign up', new_user_registration_path
+          = link_to 'Sign Up', new_user_registration_path
         .nav-link-right
           \|
         .nav-link-right
-          = link_to 'Login', new_user_session_path
+          = link_to 'Sign In', new_user_session_path
         .nav-link-right
           \|
         .nav-link-right
-          = link_to "Sign in With Google", user_omniauth_authorize_path(:google_oauth2)
+          = link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2)
         .nav-link-right
           \|
         .nav-link-right  
-          = link_to "Sign in With Facebook", user_omniauth_authorize_path(:facebook)
+          = link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook)
       .nav-break
         %hr
       .flash

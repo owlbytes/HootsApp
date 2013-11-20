@@ -1,3 +1,3 @@
-class Score < ActiveRecord::Base
+class Slideshow < ActiveRecord::Base
   
 end
