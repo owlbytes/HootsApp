@@ -17,10 +17,12 @@
         = form_tag searches_path do
           = text_field_tag :query
           = submit_tag "Search"
-      .nav-link
-        \|
-      .nav-link
-        = link_to 'Favoorites', favourites_user_path(current_user)
+
+      - if current_user
+        .nav-link
+          \|
+        .nav-link
+          = link_to 'Favoorites', favourites_user_path(current_user)
 
       - if user_signed_in?
         .nav-link-right
