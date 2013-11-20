@@ -11,7 +11,7 @@ class CreateUsersAndPostsAndCommentsAndScoresAndStars < ActiveRecord::Migration
 
     create_table :posts do |t|
       t.belongs_to :user
-      t.string :content
+      t.string :content, :limit => 141
       t.text :image
       t.text :geostamp
       t.boolean :flag, default: false
