@@ -6,11 +6,9 @@
       %ul.slides-container
         -@top_posts.each do |post| 
           %li
-            %img= image_tag post.image if post.image.present?
+            %img= if post.image.present? then image_tag post.image else image_tag randomized_post_image() end
             .slideshow-container
-              %h1
               .slideshow-contrast
-                %p
                 = "#{post.content} - #{post.user.name}"
       %nav.slides-navigation
         %a.next{href: "#"}
