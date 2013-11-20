@@ -1,7 +1,7 @@
 %p#notice= notice
 
 #posts
-  %h3 Post
+  %h3 Hoot
   %p= "#{@post.content}"
   %p=image_tag @post.image
   %p= "Current score: #{@post.score}"
@@ -10,7 +10,7 @@
   = link_to "-", vote_post_path + "?score=-1", method: :put 
   \|
   = link_to "flag" 
-  %p Comments:
+  %p Toots:
   %ol
   - @post.comments.each do |comment|
     %li
