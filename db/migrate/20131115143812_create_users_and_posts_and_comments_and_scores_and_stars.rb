@@ -2,9 +2,11 @@ class CreateUsersAndPostsAndCommentsAndScoresAndStars < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :name
-      t.string :email
+      # t.string :email
       t.text :image
-      t.string :role
+      t.string :role, default: 'user'
+      # t.string :password
+      # t.string :password_confirmation
     end
 
     create_table :posts do |t|

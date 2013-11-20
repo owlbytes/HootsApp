@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-  attr_accessible :content, :image, :geostamp, :flag
+  attr_accessible :content, :image, :geostamp, :flag, :score, :upvoters, :downvoters
 
   belongs_to :user
   has_many :comments
@@ -8,5 +8,20 @@ class Post < ActiveRecord::Base
   has_many :stars
 
   validates :content, presence: true
+  
+  mount_uploader :image, ImageUploader
+
+  self.per_page = 2
+
+  def deserialize(post)
+    @post = post
+    upvoters = @post.upvoters[1..-2].split(',').collect! {|n| n.to_i}
+    downvoters = @post.downvoters[1..-2].split(',').collect! {|n| n.to_i}
+    return upvoters, downvoters
+  end
+
+  def comment_count
+    comments.count
+  end
 
 end

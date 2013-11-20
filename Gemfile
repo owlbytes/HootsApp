@@ -7,12 +7,25 @@ gem 'rails', '3.2.14'
 
 gem 'pg'
 
+gem "will_paginate", "~> 3.0"
 gem "haml-rails"
 gem 'pry-rails'
 gem 'devise'
-
+gem "omniauth-google-oauth2"
+gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
+gem "textacular", '~> 3.0'
 gem 'jquery-rails'
 
+gem 'cancan'
+gem "omniauth"
+gem "omniauth-facebook"
+
+gem 'carrierwave'
+gem 'rmagick'
+gem "fog", "~> 1.3.1"
+
+gem 'gravtastic'
+gem 'twilio-ruby'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,7 +41,7 @@ group :development, :test do
   # gem 'pry-stack_explorer'
   gem 'annotate'
   gem 'quiet_assets'
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem "rspec-rails"

@@ -1,0 +1,48 @@
+!!!
+%html
+  %head
+  %body.slideshow
+    #slides
+      %ul.slides-container
+        -@top_posts.each do |post| 
+          %li
+            %img= image_tag post.image if post.image.present?
+            .slideshow-container
+              %h1
+              .slideshow-contrast
+                %p
+                = "#{post.content} - #{post.user.name}"
+      %nav.slides-navigation
+        %a.next{href: "#"}
+          .icon-chevron-right
+        %a.prev{href: "#"}
+          .icon-chevron-left
+  :javascript
+    $(function() {
+      $('#slides').superslides({
+      });
+    });
+    $(function() {
+      var $slides = $('#slides');
+
+      Hammer($slides[0]).on("swipeleft", function(e) {
+        $slides.data('superslides').animate('next');
+      });
+
+      Hammer($slides[0]).on("swiperight", function(e) {
+        $slides.data('superslides').animate('prev');
+      });
+
+      $slides.superslides({
+        hashchange: true
+      });
+    });
+  %footer.footer-bar
+    %hr
+    .footer-link
+      = link_to 'New Post', new_post_path
+
+    .footer-link-right
+      = form_tag searches_path do
+        = text_field_tag :query
+        = submit_tag "Search"

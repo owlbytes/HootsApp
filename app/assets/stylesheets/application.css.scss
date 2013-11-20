@@ -1,0 +1,251 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+* {
+font-family: 'Droid Sans', sans-serif;
+}
+
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('purple_forest.png');
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-size: 100%, 100%;
+  // background: #adb5be;
+  // margin-bottom: 200px;
+}
+
+/*********
+* HEADER *
+*********/
+
+.nav-bar {
+  // margin: 0 auto;
+  // max-width: 900px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  .nav-link {
+    float: left;
+    padding: 0.5em;
+    vertical-align: middle;
+    a {
+    text-decoration: none;
+    color: white;
+    }
+  }
+  .nav-link-right {
+    float: right;
+    padding: 0.5em;
+    a {
+    text-decoration: none;
+    color: white;
+    }
+  }
+  .nav-break {
+    clear: both;
+  }
+  .flash {
+    color:red;
+    padding-left: 0.5em;
+  }
+}
+
+/********
+* POSTS *
+********/
+
+.container {
+  width: 70%;
+  min-width: 350px;
+  margin: auto;
+  color: white;
+  h1 {
+    color: white;
+  }
+  .top-posts {
+    position: relative;
+  }
+  .posts{
+    // margin-left: auto;
+    // margin-right: auto;
+    position: relative;
+    // overflow: scroll;
+    // height: 300px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  img {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+  }
+  .post-score {
+    width: 2%;
+    margin-left: 1em;
+    display: inline-block;
+    text-align: center;
+  }
+  .post-voting-up {
+    width: 3%;
+    margin-left: 0.5em;
+    display: inline-block;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .post-voting-down {
+    width: 3%;
+    display: inline-block;
+    margin-left: 0.5em;
+  }
+
+  .post-comment {
+    display: inline-block;
+    width: 60%;
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }
+  .post-commentcount {
+    display: inline-block;
+    margin-left: 2em;
+  }
+  .post-buttons {
+    display: inline-block;
+    margin-left: 2em;
+  }
+  .post-break {
+    // clear: both;
+  }
+}
+
+/*********
+* SIGNIN *
+*********/
+
+.sign-in {
+  width: 400px;
+  height: 300px;
+  background-color: rgba(255,255,255,0.7);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  // opacity: 0.25;
+  .header {
+    text-align: center;
+    padding-top: 0.5em;
+  }
+  .form {
+    text-align: center;
+  }
+}
+
+/*********
+* SIGNUP *
+*********/
+
+.sign-up {
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255,255,255,0.7);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  // opacity: 0.25;
+  .header {
+    text-align: center;
+    padding-top: 0.5em;
+  }
+  .form {
+    text-align: center;
+  }
+}
+
+
+/*********
+* FOOTER *
+*********/
+
+.footer-bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 10;
+  color: white;
+  // margin: auto;
+  margin-top: 200px;
+  hr {
+    margin-top: 0px;
+  }
+  .footer-link {
+    float: left;
+    padding: 0.5em;
+    a {
+    text-decoration: none;
+    color: white;
+    }
+  }
+  .footer-link-right {
+    float: right;
+  }
+}
+
+/****************
+* MEDIA QUERIES *
+****************/
+
+@media only screen and (max-width: 1024px) {
+
+.nav-bar {
+  // display: inline-block;
+}
+
+
+  .container {
+    display: block;
+    
+    .post-score {
+    }
+    .post-voting {
+
+    }
+    .post-comment {
+      // display: inline-block;
+      margin-left: 0.5em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    .post-commentcount {
+      margin-left: 0.5em;
+    }
+    .post-buttons {
+
+    }
+  }  
+}
+
+
+
+
+
