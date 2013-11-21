@@ -1,0 +1,42 @@
+.profile_edit {
+  padding-top: 80px;
+  // margin-left: 200px;
+}
+#edit-profile-form{
+  padding-top: 5px;
+  margin-left: 200px;
+  .profile_gravatar_image {
+    padding-bottom: 15px;
+  }
+  .profile_regular_image {
+    padding-bottom: 15px;
+  }
+  .profile_name {
+    padding-bottom: 18px;
+    text-shadow:4px 4px 4px #000000;
+  }
+  .profile_email {
+    padding-bottom: 18px;
+    text-shadow:4px 4px 4px #000000;
+  }
+  .profile_new_password {
+    padding-bottom: 18px;
+    text-shadow:4px 4px 4px #000000;
+    -webkit-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0);
+    -moz-box-shadow:    0px 2px 1px rgba(50, 50, 50, 0);
+    box-shadow:         0px 2px 1px rgba(50, 50, 50, 0);
+  }
+  .profile_password_confirm {
+    padding-bottom: 18px;
+    text-shadow:4px 4px 4px #000000;
+  }
+  .profile_current_password {
+    padding-bottom: 18px;
+    text-shadow:4px 4px 4px #000000;
+  }
+  .profile_update {
+    padding-bottom: 18px;
+  }
+
+}
+
