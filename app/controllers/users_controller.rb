@@ -71,7 +71,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   def my_posts
-    @posts = Post.where user.id = current_user
+    @posts = Post.where(user_id: current_user)
   end
 
 
