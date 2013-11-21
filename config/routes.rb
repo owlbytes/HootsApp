@@ -6,6 +6,7 @@ HootsApp::Application.routes.draw do
     # get '/users' => 'users#index'
     resources :users, :only => [:index] do
       member do
+        get :my_posts
         get :favourites
         put :assign_favourite_user
       end
