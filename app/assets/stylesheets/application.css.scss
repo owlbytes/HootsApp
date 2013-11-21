@@ -24,10 +24,10 @@
 }
 
 body {
-  background-image: url('purple_forest.png');
+  background-image: url('Green-Fields.jpg');
   background-repeat: no-repeat;
   background-color: #000;
-  background-size: 100%, 100%;
+  background-size: 100%;
   overflow: hidden;
   color: white;
   // background: #adb5be;
@@ -105,7 +105,7 @@ body {
   .top-posts-container {
     position: absolute;
     width: 42.5%;
-    height: 80%;
+    height: 70%;
     max-height: 500px;
     overflow: scroll;
     // margin-top: 0px;
@@ -115,7 +115,7 @@ body {
   .latest-posts-container {
     position: absolute;
     width: 42.5%;
-    height: 80%;
+    height: 70%;
     max-height: 500px;
     overflow: scroll;
     // margin-top: 0px;
@@ -159,17 +159,16 @@ body {
   }
   .post-comment {
     display: inline-block;
-    // width: 50%;
+    width: 50%;
     margin-left: 0.5em;
-    // vertical-align: middle;
-          // margin-left: 0.5em;
+    vertical-align: middle;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
   }
   .post-comment-stats {
-    position: absolute;
+    // position: absolute;
     display: inline-block;
-    left: 65%;
+    // left: 65%;
     // vertical-align: middle;
     margin-left: 1em;
   }
@@ -193,7 +192,7 @@ body {
 * My POSTS *
 ***********/
 
-.container {
+.container-myposts {
   text-shadow:4px 4px 4px #000000;
   width: 60%;
   min-width: 350px;
@@ -206,7 +205,7 @@ body {
   .my-posts-container {
     position: absolute;
     width: 70%;
-    height: 80%;
+    height: 70%;
     max-height: 500px;
     overflow: scroll;
     // margin-top: 0px;
@@ -224,14 +223,19 @@ body {
     }
     .post-comment {
       display: inline-block;
-      // width: 50%;
+      width: 80%;
       margin-left: 0.5em;
       // vertical-align: middle;
             // margin-left: 0.5em;
       margin-top: 0.5em;
       margin-bottom: 0.5em;
+      vertical-align: middle;
     }
     .post-commentcount {
+      display: inline-block;
+      margin-left: 1em;
+      // vertical-align: middle;
+
       // position: relative;
       // vertical-align: middle;
       // margin-left: 40%;
@@ -241,6 +245,80 @@ body {
   }
 }
 
+/*************
+* FAVOURITES *
+*************/
+
+.container-favs {
+  text-shadow:4px 4px 4px #000000;
+  width: 60%;
+  min-width: 350px;
+  // margin-top: 100px;
+  margin: 100px auto;
+  // margin-right: 20px;
+  // margin-left: 200px;
+  vertical-align: middle;
+  color: white;
+  .favs-container-1 {
+    position: absolute;
+    width: 70%;
+    height: 40%;
+    max-height: 500px;
+    overflow: scroll;
+    // margin-top: 0px;
+    left: 15%;
+    float: left;
+    a {
+    color: white;
+    text-decoration: none;
+    }
+    .post-score {
+      width: 2%;
+      margin-left: 1em;
+      display: inline-block;
+      text-align: center;
+    }
+    .post-comment {
+      display: inline-block;
+      width: 75%;
+      margin-left: 0.5em;
+      // vertical-align: middle;
+            // margin-left: 0.5em;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      vertical-align: middle;
+    }
+    .post-commentcount {
+      display: inline-block;
+      margin-left: 1em;
+      // vertical-align: middle;
+
+      // position: relative;
+      // vertical-align: middle;
+      // margin-left: 40%;
+      // left: 50%;
+      // text-align: right;
+    }
+  }
+  .favs-container-2 {
+    position: absolute;
+    margin-top: 22.5%;
+    width: 70%;
+    height: 30%;
+    // max-height: 500px;
+    // overflow: scroll;
+    // margin-top: 0px;
+    left: 15%;
+    // float: left;
+    a {
+    color: white;
+    text-decoration: none;
+    }
+    li {
+      margin-bottom: 1em;
+    }
+  }
+}
 
 /*********
 * SIGNIN *
