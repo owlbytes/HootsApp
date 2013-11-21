@@ -1,3 +1,76 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+  width: 60%;
+  min-width: 350px;
+  // margin-top: 100px;
+  margin: 100px auto;
+  // margin-right: 20px;
+  // margin-left: 200px;
+  vertical-align: middle;
+  color: white;
+  h1 {
+    color: white;
+  }
+  .top-posts {
+    position: fixed;
+    margin-top: 5px;
+    margin-left: 200px;
+    float: left;
+
+  }
+  .posts{
+    position: relative;
+    overflow: scroll;
+    float: right;
+    height: 200px;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  img {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+  }
+  .post-score {
+    width: 2%;
+    margin-left: 1em;
+    display: inline-block;
+    text-align: center;
+  }
+  .post-voting-up {
+    width: 3%;
+    margin-left: 0.5em;
+    display: inline-block;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .post-voting-down {
+    width: 3%;
+    display: inline-block;
+    margin-left: 0.5em;
+  }
+
+  .post-comment {
+    display: inline-block;
+    width: 60%;
+    margin-left: 0.5em;
+    vertical-align: middle;
+  }
+  .post-commentcount {
+    display: inline-block;
+    margin-left: 2em;
+  }
+  .post-buttons {
+    display: inline-block;
+    margin-left: 2em;
+  }
+  .post-break {
+    // clear: both;
+  }
+}
