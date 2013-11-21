@@ -61,11 +61,6 @@ class PostsController < ApplicationController
 
   end
 
-  def randomized_post_image()
-    images = ["assets/London1.jpeg", "assets/dark_sunset.jpg", "assets/purple_forest.png"]  
-    images[rand(images.size)]
-  end
-
 
   # PUT /posts/1
   # PUT /posts/1.json

@@ -7,13 +7,22 @@
           %li= msg
 
 
+  %ul.slides-container    
+    %li#new_post
+      .post-container
+        .post-contrast
+          %p#post-text
+            Hoot
+
   .field
-    = f.label :content
-    = f.text_field :content
+    = f.text_area :content, placeholder: "Hoot..."
+
   .field
     = f.label :image
     = f.file_field :image
+    #digits-left Digits left: 141
   .actions
-    = f.submit 'Update'
+    %input{:type => "submit", :value => "Save", :class => "button", :id => "post_submit"}
+
 
 

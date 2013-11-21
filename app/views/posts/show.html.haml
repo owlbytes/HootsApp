@@ -1,26 +1,47 @@
-%p#notice= notice
+!!!
+%html
+  %head
+  %body.slideshow
+    #slides
+      %ul.slides-container
+        %li
+          %img= if @post.image.present? then image_tag @post.image else image_tag randomized_post_image() end
+          .slideshow-container
+            .slideshow-contrast
+              = "#{@post.content} - #{@post.user.name}"
 
-#posts
-  %h3 Hoot
-  %p= "#{@post.content}"
-  %p=image_tag @post.image
-  %p= "Current score: #{@post.score}"
-  = link_to "+", vote_post_path + "?score=1", method: :put
-  \|
-  = link_to "-", vote_post_path + "?score=-1", method: :put 
-  \|
-  = link_to "flag" 
-  %p Toots:
-  %ol
-  - @post.comments.each do |comment|
-    %li
-      = "#{comment.content}"
-      = link_to "flag"
+          %ul#comments
+            - @post.comments.each do |comment|
+              %li
+                = "#{comment.content}"
 
-  = form_for [@post, @post.comments.build] do |f|
-    %p= f.text_area :content, :size => '40x10'
-    %p= f.submit "Post comment"
+            = form_for [@post, @post.comments.build] do |f|
+              %p= f.text_area :content, :size => '30x5'
+              %p= f.submit "Post comment"
 
-= link_to 'Edit', edit_post_path(@post)
-\|
-= link_to 'Back', posts_path
+  :javascript
+    $(function() {
+      $('#slides').superslides({
+        scrollable: false
+      });
+    });
+
+  %footer.footer-bar
+    %hr
+    .footer-link
+      = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(@post) + "?score=1&returnto=index", method: :put
+      
+      = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(@post) + "?score=-1&returnto=index", method: :put
+      
+      = link_to image_tag('PNG/heart.png'), assign_favourite_post_post_path(@post), method: :put
+      
+      = link_to image_tag('PNG/info.png'), edit_post_path(@post)
+      
+      = link_to image_tag('PNG/cross.png'), @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      
+      = image_tag 'PNG/!.png'
+
+    .footer-link-right
+      = link_to 'Edit', edit_post_path(@post)
+      \|
+      = link_to 'Back', posts_path
