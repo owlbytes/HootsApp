@@ -67,6 +67,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    authorize! :update, @post
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -81,8 +82,9 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
+    authorize! :destroy, @post
+    
     @post.destroy
-
     respond_to do |format|
       format.html { redirect_to posts_url }
     end
