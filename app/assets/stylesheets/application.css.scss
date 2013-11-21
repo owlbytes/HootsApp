@@ -370,7 +370,7 @@ a:link {
 
 .sign-in {
   width: 400px;
-  height: 425px;
+  height: 470px;
   background-color: rgba(0, 0, 0, 0.6);
   margin: auto;
   margin-top: 10%;
@@ -428,10 +428,16 @@ a:link {
   .links {
     text-align: center;
     color: #ffffff;
+<<<<<<< HEAD
 
     // text-shadow: 2px 2px 1px rgba(150, 150, 158, 1);
     // background-color: rgba(0, 0, 0, 0.6);
     height: 30px;
+=======
+    text-shadow: 2px 2px 1px rgba(150, 150, 158, 1);
+    // background-color: rgba(0, 0, 0, 0.6);
+    height: 50px;
+>>>>>>> b6c3706a827a354df202c08b6c881f382d73b3d8
   }
 }
 
@@ -441,6 +447,7 @@ a:link {
 
 .sign-up {
   width: 400px;
+<<<<<<< HEAD
   height: 470px;
   background-color: rgba(0, 0, 0, 0.6);
   color: #ffffff;
@@ -452,12 +459,44 @@ a:link {
     color: #ffffff;
     text-decoration: none;
   }
+=======
+  height: 520px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: auto;
+  margin-top: 10%;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 5px;
+
+>>>>>>> b6c3706a827a354df202c08b6c881f382d73b3d8
   .header {
     text-align: center;
     padding-top: 1em;
   }
+  .a {
+    color: #ffffff;
+  }
   .form {
     text-align: center;
+    padding: 5px;
+    .button .button {
+      color: rgb(255, 255, 255);
+      font-size: 17px;
+      padding: 12px;
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0);
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      border-radius: 12px;
+      background: rgb(0, 0, 0);
+      background: -moz-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: -webkit-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: -o-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: -ms-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: linear-gradient(356deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      -webkit-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0);
+      -moz-box-shadow:    0px 2px 1px rgba(50, 50, 50, 0);
+      box-shadow:         0px 2px 1px rgba(50, 50, 50, 0);
+    }
   }
   .oauth {
     text-align: center;
@@ -468,9 +507,24 @@ a:link {
       height:40px;
     }
   }
+
+  .text {
+    padding: 5px;
+    text-shadow: 2px 2px 1px rgba(150, 150, 159, 1);
+  }
+  .box {
+    padding: 5px;
+  }
   .links {
     text-align: center;
+<<<<<<< HEAD
     height: 30px;
+=======
+    color: #ffffff;
+    text-shadow: 2px 2px 1px rgba(150, 150, 158, 1);
+    // background-color: rgba(0, 0, 0, 0.6);
+    height: 50px;
+>>>>>>> b6c3706a827a354df202c08b6c881f382d73b3d8
   }
 }
 
@@ -506,6 +560,8 @@ a:link {
     color: white;
     }
   }
+
+  
 }
 
 /****************
@@ -543,6 +599,25 @@ a:link {
 // }
 
 
-
+button, input[type="button"], input[type="submit"] { 
+color: rgb(0,0,0);
+font-size: 17px;
+padding: 6px;
+text-shadow: 0px -1px 0px rgba(0, 0, 0, 0);
+-webkit-border-radius: 6%;
+-moz-border-radius: 6%;
+border-radius: 6%;
+margin: 0 0 0 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 0 23px 5px rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: 0 0 23px 5px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 26px 5px rgba(255, 255, 255, 0.8);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+} 
 
 

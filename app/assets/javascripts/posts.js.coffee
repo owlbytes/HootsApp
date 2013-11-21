@@ -26,13 +26,14 @@ $ ->
       $('#digits-left').css("color", "white")
       if post.length < 1
         post = "Hoot..."
+        $('input[type=submit]').prop( 'disabled', true)
         setHtml('#post-text', post)
       else
         setHtml('#post-text', post)
 
   preview_and_count_check_comment = ->
     comment = getValue('#comment_content')
-    digits_left = 141 - comment.length
+    digits_left = 70 - comment.length
 
     setHtml("#digits-left", "Characters left: " + digits_left);
 
@@ -47,4 +48,4 @@ $ ->
   $("#comment_content").on     "keyup",  preview_and_count_check_comment
 
   window.onload = preview_and_count_check_post
-  window.onload = preview_and_count_check_comment
+  
