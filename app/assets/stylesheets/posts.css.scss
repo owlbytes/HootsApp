@@ -19,9 +19,8 @@
   z-index: 30;
   color: white;
   float: right;
-  // there must be a better way to get this to the bottom right
-  padding-right: 100px; 
-  padding-top: 300px;
+  margin-right: 500px; 
+  margin-top: 300px;
 }
 
 .post-contrast {
@@ -68,12 +67,13 @@
     display: inline-block;
     margin-left: 2em;
 }
+
 #post-break {
     // clear: both;
 }
 
 #top-post-container{
+  margin-bottom: 20px;
   overflow: scroll;
-  height: 500px
-
+  height: 500px;
 }
