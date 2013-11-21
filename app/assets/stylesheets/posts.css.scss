@@ -20,8 +20,8 @@
   color: white;
   float: right;
   // there must be a better way to get this to the bottom right
-  padding-right: 100px; 
-  padding-top: 300px;
+  margin-right: 500px; 
+  margin-top: 300px;
 }
 
 .post-contrast {
@@ -73,7 +73,6 @@
 }
 
 #top-post-container{
-  overflow: scroll;
-  height: 500px
+  margin-bottom: 20px;
 
 }
