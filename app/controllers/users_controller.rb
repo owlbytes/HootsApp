@@ -70,6 +70,10 @@ class UsersController < Devise::RegistrationsController
     end
   end
 
+  def my_posts
+    @posts = Post.where user.id = current_user
+  end
+
 
 
   # GET /users/1
