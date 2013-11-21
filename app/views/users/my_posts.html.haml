@@ -1,11 +1,15 @@
-%h2 Top Hoots
-- @posts.each do |post| 
-  .post-break
-    %hr
-  .post-score
-    = "#{post.score}"
-  .post-comment
-    = link_to post.content, post
-  .post-commentcount
-    = "Comments: #{post.comment_count}"
+.container
+  .my-posts-container
+    %h2 My Hoots
+    - @posts.each do |post| 
+      .post-break
+        %hr
+      .post-score
+        = "#{post.score}"
+      .post-comment
+        = link_to post.content, post
+      .post-commentcount
+        = "Comments: #{post.comment_count}"
+    .post-break
+      %hr
 
