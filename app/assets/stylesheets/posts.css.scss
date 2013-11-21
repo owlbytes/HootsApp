@@ -21,10 +21,25 @@
 }
 
 #comments{
+  position: absolute;
   z-index: 30;
-  color: white;
   float: right;
-  padding-left: 75%;
+  padding-left: 215%;
+  padding-top: 20%;
+}
+
+#comment_content{
+  margin: 0 0 10px 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 0 23px 5px rgba(255, 255, 255, 0.8);
+  -moz-box-shadow: 0 0 23px 5px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 23px 5px rgba(255, 255, 255, 0.8);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .post-contrast {
