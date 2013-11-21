@@ -38,9 +38,5 @@
   %footer.footer-bar
     %hr
     .footer-link
-      = link_to 'New Post', new_post_path
+      = link_to 'View Index', posts_path
 
-    .footer-link-right
-      = form_tag searches_path do
-        = text_field_tag :query
-        = submit_tag "Search"
