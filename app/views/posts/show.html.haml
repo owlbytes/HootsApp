@@ -10,14 +10,13 @@
             .slideshow-contrast
               = "#{@post.content} - #{@post.user.name}"
 
-          %ul#comments
-            - @post.comments.order("created_at DESC").limit(5).each do |comment|
-              %li
+            #comments
+              - @post.comments.order("created_at DESC").limit(5).each do |comment|
                 = "#{comment.content}"
 
-            = form_for [@post, @post.comments.build] do |f|
-              %p= f.text_area :content, :size => '30x5'
-              %p= f.submit "Post comment"
+              = form_for [@post, @post.comments.build] do |f|
+                %p= f.text_area :content, :size => '30x5'
+                %p= f.submit "Post comment"
 
   :javascript
     $(function() {
