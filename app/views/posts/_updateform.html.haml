@@ -12,15 +12,15 @@
       .post-container
         .post-contrast
           %p#post-text
-            Hoot
+            =@post.content
 
   .field
-    = f.text_area :content, placeholder: "Hoot..."
+    = f.text_area :content, :size => '30x5', placeholder: "Hoot..."
 
   .field
     = f.label :image
     = f.file_field :image
-    #digits-left Digits left: 141
+    #digits-left
   .actions
     %input{:type => "submit", :value => "Save", :class => "button", :id => "post_submit"}
 
