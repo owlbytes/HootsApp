@@ -47,13 +47,13 @@
         .nav-link-right
           = link_to 'Sign In', new_user_session_path
         .nav-link-right
-          \|
-        .nav-link-right
-          = link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2)
-        .nav-link-right
-          \|
-        .nav-link-right  
-          = link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook)
+        /   \|
+        / .nav-link-right
+        /   = link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2)
+        / .nav-link-right
+        /   \|
+        / .nav-link-right  
+        /   = link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook)
       .nav-break
         %hr
       .flash
