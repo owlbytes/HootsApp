@@ -10,9 +10,9 @@
             .slideshow-contrast
               = "#{@post.content} - #{@post.user.name}"
 
-            #comments
+            %ul#comments
               - @post.comments.order("created_at DESC").limit(5).each do |comment|
-                = "#{comment.content}"
+                %li= "#{comment.content}"
 
               = form_for [@post, @post.comments.build] do |f|
                 %p= f.text_area :content, :size => '30x5'
