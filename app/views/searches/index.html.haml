@@ -1,8 +1,11 @@
-%h2 Search results
-%ul
--@posts.each do |post|
-  %li
-    = truncate(post.content, length: 35, separator: " ")
+.container-search
+  .my-search
+    %h2 Search Results
+    -@posts.each do |post|
+      %li
+        .post-comment
+          = link_to post.content, post
+
 
 
  
