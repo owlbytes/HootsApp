@@ -56,7 +56,7 @@ class UsersController < Devise::RegistrationsController
     user_favs = fav_user.destring_favs(fav_user)
     respond_to do |format|
       if fav_users.include?(params[:id].to_i)
-        format.html { redirect_to users_path, notice: "That user is already on of your favoorites!" }
+        format.html { redirect_to favourites_user_path, notice: "That user is already on of your favoorites!" }
       else
         fav_users.push(params[:id].to_i)
         curr_user.fav_users = fav_users.to_s        
@@ -64,7 +64,7 @@ class UsersController < Devise::RegistrationsController
         user_favs.push(current_user.id)
         fav_user.user_favs = user_favs.to_s
         fav_user.save
-        format.html { redirect_to users_path, notice: "You've added to your favoorites." }
+        format.html { redirect_to favourites_user_path, notice: "You've added to your favoorites." }
       end
     end
   end
