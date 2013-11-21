@@ -47,4 +47,3 @@ $ ->
   $("#comment_content").on     "keyup",  preview_and_count_check_comment
 
   window.onload = preview_and_count_check_post
-  window.onload = preview_and_count_check_comment

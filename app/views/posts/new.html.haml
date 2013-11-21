@@ -18,14 +18,14 @@
       .post-container
         .post-contrast
           %p#post-text
-          
+            Hoot...
   #post-input
     .field#post-text-area
       = f.text_area :content, :size => '30x5', placeholder: "Hoot..."
     .field#post-image-box
       = f.label :image
       = f.file_field :image
-      #digits-left
+      #digits-left Characters left: 141
     .actions
       %input{:type => "submit", :value => "Publish", :class => "button", :id => "post_submit", :content => :content, :name => 'publish'}
       %input{:type => "submit", :value => "Promote", :class => "button", :id => "post_submit", :content => :content, :name => 'promote'}

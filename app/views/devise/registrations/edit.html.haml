@@ -1,0 +1,38 @@
+%h2
+  .profile_edit
+  Edit #{resource_name.to_s.humanize}
+#edit-profile-form
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+    = devise_error_messages!
+    .profile_gravatar_image
+      = image_tag @user.gravatar_url if !(@user.image?)
+    .profile_regular_image
+      = image_tag @user.image_url(:thumb) if @user.image?
+    .profile_name
+      = f.label :name
+      %br/
+      = f.text_field :name
+    .profile_email
+      = f.label :email
+      %br/
+      = f.email_field :email, :autofocus => true
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .profile_new_password
+      = f.label :password
+      %i (leave blank if you don't want to change it)
+      %br/
+      = f.password_field :password, :autocomplete => "off"
+    .profile_password_confirm
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation
+    .profile_current_password
+      = f.label :current_password
+      %br/
+      = f.password_field :current_password
+    .profile_update
+      = f.submit "Update"
+  .profile_cancel
+    #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
