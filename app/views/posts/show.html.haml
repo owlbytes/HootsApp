@@ -16,6 +16,7 @@
 
               = form_for [@post, @post.comments.build] do |f|
                 %p= f.text_area :content, :size => '30x5'
+                #digits-left
                 %p= f.submit "Post comment"
 
   :javascript
