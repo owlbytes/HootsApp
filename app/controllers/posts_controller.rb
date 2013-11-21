@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   before_filter :authenticate_user!, except: [:index, :show]
-  authorize_resource
+  #authorize_resource
 
   def index
     @top_posts = Post.order("score DESC").limit(3).all
@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    authorize! :edit, @post
   end
 
   # POST /posts

@@ -12,15 +12,15 @@ class Ability
 
       # can :update, Post, :user_id => user.id
       can :read, :all
-      can [:create, :update], Post do |post|
-        binding.pry
-        post.user == user
-      end
-      # can :create, Post
-      # can :create, Post
-      # can :update, Post do |post|
+      # can [:create, :update], Post do |post|
+      #   binding.pry
       #   post.user == user
       # end
+      # can :create, Post
+      # can :create, Post
+      can :manage, Post do |post|
+        post.user == user
+      end
       # can :destroy, Post do |post|
       #   post.user == user
       # end
