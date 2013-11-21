@@ -1,8 +1,8 @@
 %section.container
 
-  %h2 Top Hoots
-  #top-post-container
 
+  .top-posts-container
+    %h2 Top Hoots
     - @top_posts.each do |post| 
       .post-break
         %hr
@@ -11,15 +11,14 @@
       .post-comment
         = link_to post.content, post
       .post-commentcount
-        = "Comments: #{post.comment_count}"
-      .post-commentcount
-        = "Published by: #{post.user.name}"
+        = "Comments: #{post.comment_count} | #{post.user.name}"
+      / .post-published
+      /   = post.user.name
     .post-break
       %hr
 
-  / latest/new posts
-  %h2 Latest Hoots
-  .posts
+  .latest-posts-container
+    %h2 Latest Hoots
     - @latest_posts.each do |post|
       .post-break
         %hr
@@ -28,15 +27,15 @@
       .post-comment
         = link_to post.content, post
       .post-commentcount
-        = "Comments: #{post.comment_count}"
-      .post-commentcount
-        = "Published by: #{post.user.name}"
-      .post-continuous-loading
-        = render :partial => 'shared/posts', :locals => { :posts => @latest_posts}
+        = "Comments: #{post.comment_count} | #{post.user.name}"
+      / .post-published
+      /   = post.user.name
+      / .post-continuous-loading
+      /   = render :partial => 'shared/posts', :locals => { :posts => @latest_posts}
     .post-break
       %hr      
 
-  %h1= link_to "Load More Hoots", posts_path(:page => @latest_posts.next_page), :class => "load-more-posts", :remote => true if @latest_posts.next_page
+  / %h1= link_to "Load More Hoots", posts_path(:page => @latest_posts.next_page), :class => "load-more-posts", :remote => true if @latest_posts.next_page
 
   
 %footer.footer-bar
