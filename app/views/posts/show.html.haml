@@ -11,7 +11,7 @@
               = "#{@post.content} - #{@post.user.name}"
 
           %ul#comments
-            - @post.comments.each do |comment|
+            - @post.comments.order("created_at DESC").limit(5).each do |comment|
               %li
                 = "#{comment.content}"
 
