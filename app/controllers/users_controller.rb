@@ -66,7 +66,6 @@ class UsersController < Devise::RegistrationsController
         fav_user.save
         format.html { redirect_to users_path, notice: "You've added to your favoorites." }
       end
-    binding.pry
     end
   end
 
