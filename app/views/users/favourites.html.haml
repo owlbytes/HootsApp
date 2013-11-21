@@ -1,13 +1,23 @@
-%h2 Favourite Hoots
-%ol
-  - @top_posts.each do |post|
-    %li
-      =post.content
-      Posted by:
-      =post.user.name
+.container-favs
+  .favs-container-1
+    %h2 Favourite Hoots
+    - @top_posts.each do |post|
+      .post-break
+        %hr
+      .post-score
+        = "#{post.score}"
+      .post-comment
+        = link_to post.content, post
+      .post-commentcount
+        = "Comments: #{post.comment_count} | #{post.user.name}"
+    .post-break
+      %hr
 
-%h2 Favourite Hootsters
-%ol
-  - @top_users.each do |user|
-    %li
-      =user.name
+  .favs-container-2
+    %h2 Favourite Hootsters
+    %ul
+      - @top_users.each do |user|
+        %li
+          =user.name
+
+
