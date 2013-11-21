@@ -11,15 +11,14 @@
   %body 
     %header.nav-bar
 
-      - if current_user
-        .nav-link
-          \|
-        .nav-link
-          = link_to 'Favourites', favourites_user_path(current_user)
-
       - if user_signed_in?
         .nav-link
           = link_to image_tag('http://i.imgur.com/jJZiCB4.png'), '/posts'
+
+        .nav-link-right
+          = link_to 'Logout',  destroy_user_session_path, method: :delete
+        .nav-link-right
+          \| 
         .nav-link-right
           Logged in as
           = current_user.email
@@ -30,7 +29,13 @@
         .nav-link-right
           \|
         .nav-link-right
-          = link_to 'Logout',  destroy_user_session_path, method: :delete
+          = link_to 'My Favourites', favourites_user_path(current_user)
+        .nav-link-right
+          \|
+        .nav-link-right
+          = link_to 'My Hoots', root_url
+
+
       - else
         .nav-link
           = link_to image_tag('http://i.imgur.com/jJZiCB4.png'), '/posts'

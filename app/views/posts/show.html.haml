@@ -29,21 +29,18 @@
   %footer.footer-bar
     %hr
     .footer-link
-      = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(@post) + "?score=1", method: :put
+      - if current_user.present?
+        = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(@post) + "?score=1", method: :put
+        = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(@post) + "?score=-1", method: :put
+        = link_to image_tag('PNG/heart.png'), assign_favourite_post_post_path(@post), method: :put
       
-      = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(@post) + "?score=-1", method: :put
+      - if can? :edit, @post
+        = link_to image_tag('PNG/info.png'), edit_post_path(@post)
       
-      = link_to image_tag('PNG/heart.png'), assign_favourite_post_post_path(@post), method: :put
+      - if can? :destroy, @post
+        = link_to image_tag('PNG/cross.png'), @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
       
-      = link_to image_tag('PNG/info.png'), edit_post_path(@post)
-      
-      = link_to image_tag('PNG/cross.png'), @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-      
-      = image_tag 'PNG/!.png'
-      \|
-      = "Score: #{@post.score}"
+      = "Post Score: #{@post.score}"
 
     .footer-link-right
-      = link_to 'Edit', edit_post_path(@post)
-      \|
-      = link_to 'Back', posts_path
+      = link_to 'Edit Post', edit_post_path(@post)
