@@ -330,7 +330,7 @@ a:link {
 
 .sign-in {
   width: 400px;
-  height: 320px;
+  height: 470px;
   background-color: rgba(0, 0, 0, 0.6);
   margin: auto;
   margin-top: 10%;
@@ -388,7 +388,7 @@ a:link {
     text-align: center;
     color: #ffffff;
     text-shadow: 2px 2px 1px rgba(150, 150, 158, 1);
-    background-color: rgba(0, 0, 0, 0.6);
+    // background-color: rgba(0, 0, 0, 0.6);
     height: 50px;
   }
 }
@@ -399,18 +399,42 @@ a:link {
 
 .sign-up {
   width: 400px;
-  height: 470px;
-  background-color: rgba(255,255,255,0.7);
+  height: 520px;
+  background-color: rgba(0, 0, 0, 0.6);
   margin: auto;
   margin-top: 10%;
   border-radius: 10px;
-  // opacity: 0.25;
+  color: #ffffff;
+  padding: 5px;
+
   .header {
     text-align: center;
     padding-top: 0.5em;
   }
+  .a {
+    color: #ffffff;
+  }
   .form {
     text-align: center;
+    padding: 5px;
+    .button .button {
+      color: rgb(255, 255, 255);
+      font-size: 17px;
+      padding: 12px;
+      text-shadow: 0px -1px 0px rgba(0, 0, 0, 0);
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      border-radius: 12px;
+      background: rgb(0, 0, 0);
+      background: -moz-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: -webkit-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: -o-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: -ms-linear-gradient(86deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      background: linear-gradient(356deg, rgb(0, 0, 0) 100%, rgb(0, 0, 0) 100%);
+      -webkit-box-shadow: 0px 2px 1px rgba(50, 50, 50, 0);
+      -moz-box-shadow:    0px 2px 1px rgba(50, 50, 50, 0);
+      box-shadow:         0px 2px 1px rgba(50, 50, 50, 0);
+    }
   }
   .oauth {
     text-align: center;
@@ -421,8 +445,20 @@ a:link {
       height:40px;
     }
   }
+
+  .text {
+    padding: 5px;
+    text-shadow: 2px 2px 1px rgba(150, 150, 159, 1);
+  }
+  .box {
+    padding: 5px;
+  }
   .links {
     text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 1px rgba(150, 150, 158, 1);
+    // background-color: rgba(0, 0, 0, 0.6);
+    height: 50px;
   }
 }
 
