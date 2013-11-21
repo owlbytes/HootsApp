@@ -13,7 +13,7 @@
  */
 
 * {
-font-family: 'Droid Sans', sans-serif;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 
@@ -28,8 +28,20 @@ body {
   background-repeat: no-repeat;
   background-color: #000;
   background-size: 100%, 100%;
+  overflow: hidden;
+  color: white;
   // background: #adb5be;
   // margin-bottom: 200px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
 }
 
 /*********
@@ -40,9 +52,15 @@ body {
   // margin: 0 auto;
   // max-width: 900px;
   color: white;
-  position: fixed;
+  text-shadow:4px 4px 4px #000000;
+  position: fixed !important;
   width: 100%;
   z-index: 10;
+  margin-top: 0;
+  background-color: transparent;
+  top: 0;
+  right: 0;
+  left: 0;
   .nav-link {
     float: left;
     padding: 0.5em;
@@ -64,7 +82,8 @@ body {
     clear: both;
   }
   .flash {
-    color:red;
+    color:#F0F0F0;
+    text-shadow:4px 4px 4px #000000;
     padding-left: 0.5em;
   }
 }
@@ -74,22 +93,29 @@ body {
 ********/
 
 .container {
-  width: 70%;
+  width: 60%;
   min-width: 350px;
-  margin: auto;
+  // margin-top: 100px;
+  margin: 100px auto;
+  // margin-right: 20px;
+  // margin-left: 200px;
+  vertical-align: middle;
   color: white;
   h1 {
     color: white;
   }
   .top-posts {
-    position: relative;
+    position: fixed;
+    margin-top: 5px;
+    margin-left: 200px;
+    float: left;
+
   }
   .posts{
-    // margin-left: auto;
-    // margin-right: auto;
     position: relative;
-    // overflow: scroll;
-    // height: 300px;
+    overflow: scroll;
+    float: right;
+    height: 200px;
   }
   a {
     color: white;
@@ -146,7 +172,7 @@ body {
 
 .sign-in {
   width: 400px;
-  height: 300px;
+  height: 320px;
   background-color: rgba(255,255,255,0.7);
   margin: auto;
   margin-top: 10%;
@@ -157,6 +183,18 @@ body {
     padding-top: 0.5em;
   }
   .form {
+    text-align: center;
+  }
+  .oauth {
+    text-align: center;
+    img {
+      border-radius: 5px;
+      margin-left: 1.5em;
+      width: 40px;
+      height:40px;
+    }
+  }
+  .links {
     text-align: center;
   }
 }
@@ -167,7 +205,7 @@ body {
 
 .sign-up {
   width: 400px;
-  height: 400px;
+  height: 470px;
   background-color: rgba(255,255,255,0.7);
   margin: auto;
   margin-top: 10%;
@@ -178,6 +216,18 @@ body {
     padding-top: 0.5em;
   }
   .form {
+    text-align: center;
+  }
+  .oauth {
+    text-align: center;
+    img {
+      border-radius: 5px;
+      margin-left: 1.5em;
+      width: 40px;
+      height:40px;
+    }
+  }
+  .links {
     text-align: center;
   }
 }
@@ -208,6 +258,11 @@ body {
   }
   .footer-link-right {
     float: right;
+    padding: 0.5em;
+    a {
+    text-decoration: none;
+    color: white;
+    }
   }
 }
 

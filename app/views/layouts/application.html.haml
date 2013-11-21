@@ -10,15 +10,14 @@
   %body 
     %header.nav-bar
 
-      - if current_user
-        .nav-link
-          \|
-        .nav-link
-          = link_to 'Favourites', favourites_user_path(current_user)
-
       - if user_signed_in?
         .nav-link
-          = link_to 'Hoot', root_url
+          = link_to image_tag('/assets/hoots_shadow_logo.png'), '/posts'
+
+        .nav-link-right
+          = link_to 'Logout',  destroy_user_session_path, method: :delete
+        .nav-link-right
+          \| 
         .nav-link-right
           Logged in as
           = current_user.email
@@ -29,10 +28,17 @@
         .nav-link-right
           \|
         .nav-link-right
-          = link_to 'Logout',  destroy_user_session_path, method: :delete
+          = link_to 'My Favourites', favourites_user_path(current_user)
+        .nav-link-right
+          \|
+        .nav-link-right
+          = link_to 'My Hoots', my_posts_user_path(current_user)
+
+
       - else
         .nav-link
-          = link_to 'Hoot', root_url
+          = link_to image_tag('/assets/hoots_shadow_logo.png'), '/posts'
+          / = link_to (image_tag ("app/assets/images/hoots_app_logo_nav_bar_clear_trans.png" "/posts"))
         .nav-link-right
           = link_to 'Sign Up', new_user_registration_path
         .nav-link-right
@@ -40,13 +46,13 @@
         .nav-link-right
           = link_to 'Sign In', new_user_session_path
         .nav-link-right
-          \|
-        .nav-link-right
-          = link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2)
-        .nav-link-right
-          \|
-        .nav-link-right  
-          = link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook)
+        /   \|
+        / .nav-link-right
+        /   = link_to "Sign In With Google", user_omniauth_authorize_path(:google_oauth2)
+        / .nav-link-right
+        /   \|
+        / .nav-link-right  
+        /   = link_to "Sign In With Facebook", user_omniauth_authorize_path(:facebook)
       .nav-break
         %hr
       .flash

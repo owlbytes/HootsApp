@@ -3,7 +3,7 @@ class UsersController < Devise::RegistrationsController
   # GET /users.json
 
   before_filter :authenticate_user!, except: [:index]
-  authorize_resource
+  # authorize_resource
 
   def index
     users = User.all
@@ -68,6 +68,10 @@ class UsersController < Devise::RegistrationsController
       end
     binding.pry
     end
+  end
+
+  def my_posts
+    @posts = Post.where(user_id: current_user)
   end
 
 

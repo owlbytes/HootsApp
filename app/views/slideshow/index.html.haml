@@ -6,11 +6,9 @@
       %ul.slides-container
         -@top_posts.each do |post| 
           %li
-            %img= image_tag post.image if post.image.present?
+            %img= if post.image.present? then image_tag post.image else image_tag randomized_post_image() end
             .slideshow-container
-              %h1
               .slideshow-contrast
-                %p
                 = "#{post.content} - #{post.user.name}"
       %nav.slides-navigation
         %a.next{href: "#"}
@@ -40,9 +38,5 @@
   %footer.footer-bar
     %hr
     .footer-link
-      = link_to 'New Post', new_post_path
+      = link_to 'View Index', posts_path
 
-    .footer-link-right
-      = form_tag searches_path do
-        = text_field_tag :query
-        = submit_tag "Search"

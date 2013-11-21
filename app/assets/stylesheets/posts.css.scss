@@ -1,3 +1,84 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-container{
+  position: relative;
+  width: 50%;
+  max-width: 500px;
+  left: 134px;
+  top: 13%;
+  padding: 10px 20px;
+}
+
+#score{
+  text-align: top ;
+  font-size: 1em;
+}
+
+#new_post{
+  list-style: none;
+}
+
+#comments{
+  z-index: 30;
+  color: white;
+  float: right;
+  margin-right: 500px; 
+  margin-top: 300px;
+}
+
+.post-contrast {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 10px;
+  -webkit-box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 23px 5px rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#post-score {
+    width: 2%;
+    margin-left: 1em;
+    display: inline-block;
+    text-align: center;
+}
+#post-voting-up {
+    width: 3%;
+    margin-left: 0.5em;
+    display: inline-block;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+}
+.slideshow-contrast-buttons{
+  height: 3%;
+  width: 3%
+}
+#post-voting-down {
+    width: 3%;
+    display: inline-block;
+    margin-left: 0.5em;
+}
+
+#post-buttons {
+    width: 5%;
+    display: inline-block;
+    margin-left: 2em;
+}
+
+#post-break {
+    // clear: both;
+}
+
+#top-post-container{
+  margin-bottom: 20px;
+  overflow: scroll;
+  height: 500px;
+}

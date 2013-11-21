@@ -1,0 +1,26 @@
+= form_for @post do |f|
+  - if @post.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+
+
+  %ul.slides-container    
+    %li#new_post
+      .post-container
+        .post-contrast
+          %p#post-text
+            =@post.content
+
+  .field
+    = f.text_area :content, :size => '30x5', placeholder: "Hoot..."
+  .field
+    = f.label :image
+    = f.file_field :image
+    #digits-left
+  .actions
+    %input{:type => "submit", :value => "Publish", :class => "button", :id => "post_submit", :content => :content, :name => 'publish'}
+    %input{:type => "submit", :value => "Promote", :class => "button", :id => "post_submit", :content => :content, :name => 'promote'}
+
