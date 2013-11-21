@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
 
   before_filter :authenticate_user!, except: [:index, :show]
-  authorize_resource
+  #authorize_resource
 
   def index
     @top_posts = Post.order("score DESC").limit(3).all
@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    authorize! :edit, @post
   end
 
   # POST /posts
@@ -66,6 +67,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
+    authorize! :update, @post
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -80,8 +82,9 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
+    authorize! :destroy, @post
+    
     @post.destroy
-
     respond_to do |format|
       format.html { redirect_to posts_url }
     end

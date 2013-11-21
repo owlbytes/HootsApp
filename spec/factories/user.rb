@@ -4,6 +4,7 @@ FactoryGirl.define do
     sequence(:name) { |n| "User#{n}" }
     email { "#{name}@gmail.com" }
     image { "image-#{name}.jpg" }
+    phone_no { "07777777777"}
     password 'password'
     role 'user'
 
