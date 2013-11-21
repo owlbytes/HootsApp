@@ -22,7 +22,22 @@
       %div
         = f.label :image
         %br/
+        %br/
         = f.file_field :image
+        %br/
+        %br/
       %div= f.submit "Sign up"
-  = render "devise/shared/links"
+  / = render "devise/shared/links"
+
+  %hr
+
+  .oauth
+    Sign up with:
+    = link_to image_tag('google2.jpg'), "/users/auth/google_oauth2"
+    = link_to image_tag('facebook2.jpeg'), "/users/auth/facebook"
+  
+  %hr
+
+  .links
+    = link_to "Didn't receive confirmation email?", "/users/confirmation/new"
 
