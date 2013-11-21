@@ -29,7 +29,11 @@
         .nav-link-right
           \|
         .nav-link-right
-          = link_to 'Favourites', favourites_user_path(current_user)
+          = link_to 'My Favourites', favourites_user_path(current_user)
+        .nav-link-right
+          \|
+        .nav-link-right
+          = link_to 'My Hoots', root_url
 
 
       - else
