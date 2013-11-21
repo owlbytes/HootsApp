@@ -15,4 +15,19 @@
         = f.label :remember_me
       .button
         = f.submit "Sign In"
-  = render "devise/shared/links"
+  / = render "devise/shared/links"
+
+  %hr
+
+  .oauth
+    Sign in with:
+    = link_to image_tag('google2.jpg'), "/users/auth/google_oauth2"
+    = link_to image_tag('facebook2.jpeg'), "/users/auth/facebook"
+  
+  %hr
+
+  .links
+    = link_to 'Forgot your password?', "/users/password/new"
+  .links
+    = link_to "Didn't receive confirmation email?", "/users/confirmation/new"
+
