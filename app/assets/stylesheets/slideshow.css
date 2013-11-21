@@ -24,6 +24,8 @@
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
+  margin-top: 40px;
+  margin-left: 120px;
 }
 
 .icon-chevron-left:before {
