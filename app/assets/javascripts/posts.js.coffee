@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+
   $('a.load-more-posts').on 'inview', (e, visible) ->
     return unless visible
     $.getScript $(this).attr('href')
@@ -24,3 +25,5 @@ $ ->
       setHtml('#post-text', post)
 
   $("#post_content").on     "keyup",  preview_and_count_check
+
+  window.onload = preview_and_count_check
