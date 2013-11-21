@@ -1,7 +1,5 @@
 %section.container
 
-
-
   %h2 Top Hoots
   #top-post-container
 
@@ -10,19 +8,14 @@
         %hr
       .post-score
         = "#{post.score}"
-      .post-voting-up
-        = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(post) + "?score=1&returnto=index", method: :put
-      .post-voting-down
-        = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(post) + "?score=-1&returnto=index", method: :put
       .post-comment
         = link_to post.content, post
       .post-commentcount
         = "Comments: #{post.comment_count}"
-      .post-buttons
-        = link_to image_tag('PNG/heart.png'), assign_favourite_post_post_path(post), method: :put
-        = link_to image_tag('PNG/info.png'), edit_post_path(post)
-        = link_to image_tag('PNG/cross.png'), post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-        = image_tag 'PNG/!.png'
+      .post-commentcount
+        = "Published by: #{post.user.name}"
+    .post-break
+      %hr
 
   / latest/new posts
   %h2 Latest Hoots
@@ -32,31 +25,29 @@
         %hr
       .post-score
         = "#{post.score}"
-      .post-voting-up
-        = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(post) + "?score=1&returnto=index", method: :put
-      .post-voting-down
-        = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(post) + "?score=-1&returnto=index", method: :put
       .post-comment
         = link_to post.content, post
       .post-commentcount
         = "Comments: #{post.comment_count}"
-      .post-buttons
-        = image_tag 'PNG/heart.png'
-        = link_to image_tag('PNG/info.png'), edit_post_path(post)
-        = link_to image_tag('PNG/cross.png'), post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-        = image_tag 'PNG/!.png'
+      .post-commentcount
+        = "Published by: #{post.user.name}"
       .post-continuous-loading
         = render :partial => 'shared/posts', :locals => { :posts => @latest_posts}
-    
+    .post-break
+      %hr      
+
   %h1= link_to "Load More Hoots", posts_path(:page => @latest_posts.next_page), :class => "load-more-posts", :remote => true if @latest_posts.next_page
 
-  .post-break
-    %hr
   
 %footer.footer-bar
   %hr
   .footer-link
     = link_to 'New Hoot', new_post_path
+
+  .footer-link-right
+    = form_tag searches_path do
+      = text_field_tag :query
+      = submit_tag "Search"
 
 
 
