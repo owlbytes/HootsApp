@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :stars
   has_many :providers
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :email, presence: true
 
   mount_uploader :image, ImageUploader
