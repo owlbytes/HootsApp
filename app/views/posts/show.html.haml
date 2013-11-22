@@ -15,10 +15,10 @@
                 %li= "#{comment.content}"
 
               = form_for [@post, @post.comments.build] do |f|
-                %p= f.text_area :content, :size => '30x5'
+                %p= f.text_area :content, :size => '30x5', placeholder: "Comment..."
+
                 #digits-left Characters left: 70
                 %p= f.submit "Post comment", disabled: true
-
   :javascript
     $(function() {
       $('#slides').superslides({
