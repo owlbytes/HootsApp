@@ -43,6 +43,9 @@ $ ->
     else 
       $('input[type=submit]').prop( 'disabled', false)
       $('#digits-left').css("color", "white")
+      if comment.length < 1
+        $('input[type=submit]').prop( 'disabled', true)
+
 
   $("#post_content").on     "keyup",  preview_and_count_check_post
   $("#comment_content").on     "keyup",  preview_and_count_check_comment

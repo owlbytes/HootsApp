@@ -1,6 +1,6 @@
-%h2
-  .profile_edit
-  Edit #{resource_name.to_s.humanize}
+
+.profile_edit
+  %h2 Edit #{resource_name.to_s.humanize}
 #edit-profile-form
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
     = devise_error_messages!
@@ -36,3 +36,8 @@
       = f.submit "Update"
   .profile_cancel
     #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
+
+%footer.footer-bar
+  %hr
+  .footer-link-right
+    = link_to 'View Index', posts_path

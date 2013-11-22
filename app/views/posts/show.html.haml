@@ -15,10 +15,10 @@
                 %li= "#{comment.content}"
 
               = form_for [@post, @post.comments.build] do |f|
-                %p= f.text_area :content, :size => '30x5'
+                %p= f.text_area :content, :size => '30x5', placeholder: "Comment..."
+
                 #digits-left Characters left: 70
                 %p= f.submit "Post comment", disabled: true
-
   :javascript
     $(function() {
       $('#slides').superslides({
@@ -30,18 +30,18 @@
     %hr
     .footer-link
       - if current_user.present?
-        = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(@post) + "?score=1", method: :put
-        = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(@post) + "?score=-1", method: :put
-        = link_to image_tag('PNG/star.png'), assign_favourite_post_post_path(@post), method: :put
-        = link_to image_tag('PNG/heart.png'), assign_favourite_user_user_path(@post.user), method: :put
+        = link_to image_tag('PNG/thumbs-up.png', title: "Upvote"), vote_post_path(@post) + "?score=1", method: :put
+        = link_to image_tag('PNG/thumbs-down.png',title: "Downvote"), vote_post_path(@post) + "?score=-1", method: :put
+        = link_to image_tag('PNG/star.png', title: "Favourite this hoot"), assign_favourite_post_post_path(@post), method: :put
+        = link_to image_tag('PNG/heart.png', title: "Favourite this hootster"), assign_favourite_user_user_path(@post.user), method: :put
       
       - if can? :edit, @post
-        = link_to image_tag('PNG/info.png'), edit_post_path(@post)
+        = link_to image_tag('PNG/info.png', title: "Edit hoot"), edit_post_path(@post)
       
       - if can? :destroy, @post
-        = link_to image_tag('PNG/cross.png'), @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        = link_to image_tag('PNG/cross.png', title: "Delete hoot"), @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
       .footer-score
         = "Post Score: #{@post.score}"
 
     .footer-link-right
-      = link_to 'Edit Post', edit_post_path(@post)
+      = link_to 'View Index', posts_path
