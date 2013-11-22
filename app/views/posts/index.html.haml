@@ -10,7 +10,7 @@
         = "#{post.score}"
       .post-comment
         = link_to post.content, post
-      .post-commentcount
+      .post-comment-stats
         = "Comments: #{post.comment_count} | #{post.user.name}"
       / .post-published
       /   = post.user.name
@@ -26,7 +26,7 @@
         = "#{post.score}"
       .post-comment
         = link_to post.content, post
-      .post-commentcount
+      .post-comment-stats
         = "Comments: #{post.comment_count} | #{post.user.name}"
       / .post-published
       /   = post.user.name
