@@ -32,16 +32,16 @@
       - if current_user.present?
         = link_to image_tag('PNG/thumbs-up.png'), vote_post_path(@post) + "?score=1", method: :put
         = link_to image_tag('PNG/thumbs-down.png'), vote_post_path(@post) + "?score=-1", method: :put
-        = link_to image_tag('PNG/heart.png'), assign_favourite_post_post_path(@post), method: :put
-        = link_to image_tag('PNG/user.png'), assign_favourite_user_user_path(@post.user), method: :put
+        = link_to image_tag('PNG/star.png'), assign_favourite_post_post_path(@post), method: :put
+        = link_to image_tag('PNG/heart.png'), assign_favourite_user_user_path(@post.user), method: :put
       
       - if can? :edit, @post
         = link_to image_tag('PNG/info.png'), edit_post_path(@post)
       
       - if can? :destroy, @post
         = link_to image_tag('PNG/cross.png'), @post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-      
-      = "Post Score: #{@post.score}"
+      .footer-score
+        = "Post Score: #{@post.score}"
 
     .footer-link-right
       = link_to 'Edit Post', edit_post_path(@post)

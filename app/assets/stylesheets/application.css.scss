@@ -360,6 +360,58 @@ body {
   }
 }
 
+/**************
+* LEADERBOARD *
+**************/
+
+.container-leaderboard {
+  text-shadow:4px 4px 4px #000000;
+  width: 60%;
+  min-width: 350px;
+  // margin-top: 100px;
+  margin: 100px auto;
+  // margin-right: 20px;
+  // margin-left: 200px;
+  vertical-align: middle;
+  color: white;
+  .leaderboard {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    max-height: 500px;
+    overflow: scroll;
+    // margin-top: 0px;
+    left: 15%;
+    float: left;
+    a {
+    color: white;
+    text-decoration: none;
+    }
+    .user {
+      display: inline-block;
+      // width: 80%;
+      margin-left: 0.5em;
+      // vertical-align: middle;
+            // margin-left: 0.5em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      // vertical-align: middle;
+    }
+    .user-score {
+      display: inline-block;
+      // width: 80%;
+      margin-left: 0.5em;
+      // margin-top: 1em;
+      vertical-align: middle;
+      // vertical-align: middle;
+            // margin-left: 0.5em;
+      // margin-top: 1em;
+      // margin-bottom: 1em;
+      // vertical-align: middle;
+    }
+  }
+}
+
 /*********
 * SIGNIN *
 *********/
@@ -534,6 +586,9 @@ a:link {
     text-decoration: none;
     color: white;
     }
+  .footer-score {
+    float: left;
+  }
   }
 
   
