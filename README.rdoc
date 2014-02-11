@@ -5,22 +5,22 @@ Hoots was created by Neha Shah, Alex Hamlin, Jamie Wallace, and Adam Buchan as p
 Languages/Frameworks: Ruby on Rails, Javascript, HTML, CSS
 
 
-*Neha Shah
-Github: github.com/owlbytes
-LinkedIn: uk.linkedin.com/in/nehashah1/
+*Neha Shah*
+- Github: github.com/owlbytes
+- LinkedIn: uk.linkedin.com/in/nehashah1/
 
 
-*Alex Hamlin
-Github: github.com/TheVitruvian
-LinkedIn: uk.linkedin.com/pub/alex-hamlin/5/415/90b
+*Alex Hamlin*
+- Github: github.com/TheVitruvian
+- LinkedIn: uk.linkedin.com/pub/alex-hamlin/5/415/90b
 
 
-*Jamie Wallace
-Github: github.com/jamiewallace
-LinkedIn: uk.linkedin.com/pub/jamie-wallace/2/766/453
+*Jamie Wallace*
+- Github: github.com/jamiewallace
+- LinkedIn: uk.linkedin.com/pub/jamie-wallace/2/766/453
 
 
-*Adam Buchan
-Github: github.com/AdamBuchan
-LinkedIn: uk.linkedin.com/in/adambuchan
+*Adam Buchan*
+- Github: github.com/AdamBuchan
+- LinkedIn: uk.linkedin.com/in/adambuchan
 
